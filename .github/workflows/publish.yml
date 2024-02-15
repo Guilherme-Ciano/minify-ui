@@ -23,8 +23,8 @@ jobs:
       - name: 🆙 Bump version
         run: |
           npm version patch --no-git-tag-version
-          git config user.name "${{ secrets.GIT_USER }}"
-          git config user.email "${{ secrets.GIT_EMAIL }}"
+          git config --global user.name "${{ secrets.GIT_USER }}"
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
           git add .
           git commit -m "[AUTO] Bumbing version"
           git push
