@@ -30,6 +30,7 @@ jobs:
     steps:
       - name: 📝 Commit changes
         run: |
+          git init
           git config user.name "${{ secrets.GIT_USER }}"
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git add .
@@ -38,7 +39,7 @@ jobs:
 
   publish:
     name: 🚀 Publish to NPM
-    needs: update-version
+    needs: commit-changes
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
