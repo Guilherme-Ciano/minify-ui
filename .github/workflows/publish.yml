@@ -29,23 +29,6 @@ jobs:
           git commit -m "[AUTO] Bumbing version"
           git push
 
-  # commit-changes:
-  #   name: 📝 Commit changes
-  #   needs: update-version
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: checkout
-  #       uses: actions/checkout@v2
-  #     - name: node
-  #       uses: actions/setup-node@v2
-  #     - name: 📝 Commit changes
-  #       run: |
-  #         git config user.name "${{ secrets.GIT_USER }}"
-  #         git config user.email "${{ secrets.GIT_EMAIL }}"
-  #         git add .
-  #         git commit -m "[AUTO] Bumbing version"
-  #         git push
-
   publish:
     name: 🚀 Publish to NPM
     needs: update-version
@@ -54,6 +37,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: node
         uses: actions/setup-node@v2
         with:
