@@ -1,6 +1,10 @@
 {
   "name": "minify-ui",
   "version": "0.17.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Guilherme-Ciano/minify-ui"
+  },
   "keywords": [],
   "author": "Guilherme Ciano",
   "license": "MIT",
