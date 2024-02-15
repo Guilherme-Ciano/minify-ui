@@ -1,33 +1,38 @@
-name: 'publish to npm'
+name: 'NPM Configuration & Publishing'
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
 
 jobs:
   update-version:
+    name: 🪄 Update package version
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
+      - name: 📚 Check out code
         uses: actions/checkout@v2
 
-      - name: Use Node.js
+      - name: 🟢 Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
 
       - name: Bump version
         run: npm version patch
 
       - name: Commit changes
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "<>"
-          git commit -am "Bump version"
+          git config user.name "${{ secrets.GIT_USER }}"
+          git config user.email "${{ secrets.GIT_EMAIL }}"
+          git commit -am "[AUTO] Bumbing version"
           git push
 
   publish:
+    name: 🚀 Publish to NPM
+    needs: update-version
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
