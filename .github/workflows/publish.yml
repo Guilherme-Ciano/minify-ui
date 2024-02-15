@@ -20,15 +20,15 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Bump version
-        run: npm version patch
-
-      - name: Commit changes
+      - name: 📝 Commit changes
         run: |
-          git config --global user.name "${{ secrets.GIT_USER }}"
-          git config --global user.email "${{ secrets.GIT_EMAIL }}"
+          git config user.name "${{ secrets.GIT_USER }}"
+          git config user.email "${{ secrets.GIT_EMAIL }}"
           git commit -am "[AUTO] Bumbing version"
           git push
+
+      - name: 🆙 Bump version
+        run: npm version patch
 
   publish:
     name: 🚀 Publish to NPM
