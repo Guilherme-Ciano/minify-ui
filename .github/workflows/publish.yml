@@ -28,6 +28,10 @@ jobs:
     needs: update-version
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: node
+        uses: actions/setup-node@v2
       - name: 📝 Commit changes
         run: |
           git init
