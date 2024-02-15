@@ -34,7 +34,6 @@ jobs:
         uses: actions/setup-node@v2
       - name: 📝 Commit changes
         run: |
-          git init
           git config user.name "${{ secrets.GIT_USER }}"
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git add .
