@@ -57,8 +57,8 @@ For detailed documentation and usage examples, we will later on build a document
 
 ## Contributing
 
-We welcome contributions from the community! If you find any bugs, have feature requests, or want to contribute improvements, please [submit an issue](https://github.com/Guilherme-Ciano/minify-ui/issues) or [create a pull request](https://github.com/your-username/minify-ui/pulls) on GitHub.
+We welcome contributions from the community! If you find any bugs, have feature requests, or want to contribute improvements, please [submit an issue](https://github.com/Guilherme-Ciano/minify-ui/issues) or [create a pull request](https://github.com/Guilherme-Ciano/minify-ui/pulls) on GitHub.
 
 ## License
 
-minify-ui is licensed under the MIT License. See the [LICENSE](https://github.com/your-username/minify-ui/blob/main/LICENSE) file for details.
+minify-ui is licensed under the MIT License. See the [LICENSE](https://github.com/Guilherme-Ciano/minify-ui/blob/main/LICENSE) file for details.
