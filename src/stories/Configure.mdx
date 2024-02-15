@@ -1,369 +1,198 @@
 import { Meta } from '@storybook/blocks';
+import { FaSave } from 'react-icons/fa';
 
-import Github from './assets/github.svg';
-import Discord from './assets/discord.svg';
-import Youtube from './assets/youtube.svg';
-import Tutorials from './assets/tutorials.svg';
-import Styling from './assets/styling.png';
-import Context from './assets/context.png';
-import Assets from './assets/assets.png';
-import Docs from './assets/docs.png';
-import Share from './assets/share.png';
-import FigmaPlugin from './assets/figma-plugin.png';
-import Testing from './assets/testing.png';
-import Accessibility from './assets/accessibility.png';
-import Theming from './assets/theming.png';
-import AddonLibrary from './assets/addon-library.png';
+import { MdOutlineDesignServices } from 'react-icons/md';
+import { GrConfigure } from 'react-icons/gr';
+import { BsFeather } from 'react-icons/bs';
 
-export const RightArrow = () => (
-  <svg
-    viewBox="0 0 14 14"
-    width="8px"
-    height="14px"
-    style={{
-      marginLeft: '4px',
-      display: 'inline-block',
-      shapeRendering: 'inherit',
-      verticalAlign: 'middle',
-      fill: 'currentColor',
-      'path fill': 'currentColor',
-    }}
-  >
-    <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
-  </svg>
-);
+import Navbar from './homepage/navbar';
 
-<Meta title="Get Started" />
+<Meta title="Home" />
 
-<div className="sb-container">
-  <div className='sb-section-title'>
-  # Minify UI
+<Navbar />
+<div class="page" id='home'>
 
-minify-ui is a minimalist and customizable component library designed to simplify front-end development. With a focus on simplicity and ease of customization, minify-ui provides a set of essential UI components to help you build beautiful and responsive web applications with minimal effort.
-
-  </div>
-  <div className="sb-section">
-    <div className="sb-section-item">
-      <img
-        src={Styling}
-        alt="A wall of logos representing different styling technologies"
-      />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
-      <a
-        href="https://storybook.js.org/docs/react/configure/styling-and-css"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
-      />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/react/writing-stories/decorators#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
-    </div>
-    <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
-      <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
-        <a
-          href="https://storybook.js.org/docs/react/configure/images-and-assets"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<div className="sb-container">
-  <div className='sb-section-title'>
-    # Do more with Storybook
-
-    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
-
-  </div>
-
-  <div className="sb-section">
-    <div className="sb-features-grid">
-      <div className="sb-grid-item">
-        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
-        <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
-        <a
-          href="https://storybook.js.org/docs/react/writing-docs/autodocs"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
-        <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
-        <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
-        <a
-          href="https://storybook.js.org/docs/react/sharing/publish-storybook#publish-storybook-with-chromatic"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
-        <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
-        <a
-          href="https://storybook.js.org/docs/react/sharing/design-integrations#embed-storybook-in-figma-with-the-plugin"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Testing} alt="Screenshot of tests passing and failing" />
-        <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
-        <a
-          href="https://storybook.js.org/docs/react/writing-tests"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
-        <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
-        <a
-          href="https://storybook.js.org/docs/react/writing-tests/accessibility-testing"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
-        <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
-        <a
-          href="https://storybook.js.org/docs/react/configure/theming"
-          target="_blank"
-        >Learn more<RightArrow /></a>
-      </div>
-    </div>
-  </div>
-</div>
-<div className='sb-addon'>
-  <div className='sb-addon-text'>
-    <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
-    <a
-        href="https://storybook.js.org/integrations/"
-        target="_blank"
-      >Discover all addons<RightArrow /></a>
-  </div>
-  <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
-  </div>
+<div class="header">
+  <h1 className="headerTitle">Minify UI</h1>
+  <h3 className="headerSubtitle">Streamlining Front-End Excellence</h3>
 </div>
 
-<div className="sb-section sb-socials">
-    <div className="sb-section-item">
-      <img src={Github} alt="Github logo" className="sb-explore-image"/>
-      Join our contributors building the future of UI development.
-
-      <a
-        href="https://github.com/storybookjs/storybook"
-        target="_blank"
-      >Star on GitHub<RightArrow /></a>
+<div class="row">
+<div class="card">
+  <div class="titleSection">
+    <div class="titleIcon">
+      <MdOutlineDesignServices class="icon" />
+      <h2 class="title">Streamlined Design</h2>
     </div>
-    <div className="sb-section-item">
-      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
-      <div>
-        Get support and chat with frontend developers.
+    <h3 class="subtitle">Subtítulo do Card</h3>
+  </div>
 
-        <a
-          href="https://discord.gg/storybook"
-          target="_blank"
-        >Join Discord server<RightArrow /></a>
-      </div>
+  <p class="description">
+    Minimalist design ethos, delivering sleek and uncluttered UI components that seamlessly integrate into any project.
+  </p>
+</div>
+
+<div class="card">
+  <div class="titleSection">
+    <div class="titleIcon">
+      <GrConfigure class="icon" />
+      <h2 class="title">Easy Customization</h2>
     </div>
-    <div className="sb-section-item">
-      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
-      <div>
-        Watch tutorials, feature previews and interviews.
+    <h3 class="subtitle">Subtítulo do Card</h3>
+  </div>
 
-        <a
-          href="https://www.youtube.com/@chromaticui"
-          target="_blank"
-        >Watch on YouTube<RightArrow /></a>
-      </div>
+  <p class="description">
+    Effortlessly customize and extend components to align with your project's unique design specifications.
+  </p>
+</div>
+
+<div class="card">
+  <div class="titleSection">
+    <div class="titleIcon">
+      <BsFeather class="icon" />
+      <h2 class="title">Lightweight</h2>
     </div>
-    <div className="sb-section-item">
-      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
-      <p>Follow guided walkthroughs on for key workflows.</p>
+    <h3 class="subtitle">Subtítulo do Card</h3>
+  </div>
 
-      <a
-          href="https://storybook.js.org/tutorials/"
-          target="_blank"
-        >Discover tutorials<RightArrow /></a>
-    </div>
-
+  <p class="description">
+    Engineered for performance, Minify UI is lightweight, ensuring swift load times and fluid user experiences.
+  </p>
+</div>
+</div>
 </div>
 
 <style>
   {`
-  .sb-container {
-    margin-bottom: 48px;
-  }
 
-  .sb-section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
+  .page {
+    height: 100vh;
 
-  img {
-    object-fit: cover;
-  }
-
-  .sb-section-title {
-    margin-bottom: 32px;
-  }
-
-  .sb-section a:not(h1 a, h2 a, h3 a) {
-    font-size: 14px;
-  }
-
-  .sb-section-item, .sb-grid-item {
-    flex: 1;
     display: flex;
     flex-direction: column;
-  }
 
-  .sb-section-item-heading {
-    padding-top: 20px !important;
-    padding-bottom: 5px !important;
-    margin: 0 !important;
-  }
-  .sb-section-item-paragraph {
-    margin: 0;
-    padding-bottom: 10px;
-  }
+    gap: 5rem;
 
-  .sb-chevron {
-    margin-left: 5px;
-  }
-
-  .sb-features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 32px 20px;
-  }
-
-  .sb-socials {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .sb-socials p {
-    margin-bottom: 10px;
-  }
-
-  .sb-explore-image {
-    max-height: 32px;
-    align-self: flex-start;
-  }
-
-  .sb-addon {
-    width: 100%;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    background-color: #EEF3F8;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background: #EEF3F8;
-    height: 180px;
-    margin-bottom: 48px;
-    overflow: hidden;
   }
 
-  .sb-addon-text {
-    padding-left: 48px;
-    max-width: 240px;
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 3rem;
   }
 
-  .sb-addon-text h4 {
-    padding-top: 0px;
+  .headerTitle {
+    color: #000;
+
+    font-size: 64pt;
+    font-weight: bolder;
   }
 
-  .sb-addon-img {
-    position: absolute;
-    left: 345px;
-    top: 0;
-    height: 100%;
-    width: 200%;
-    overflow: hidden;
+  .headerSubtitle {
+    color: #000;
+
+    font-size: 12pt;
+    font-weight: light;
+
+    text-align: center;
   }
 
-  .sb-addon-img img {
-    width: 650px;
-    transform: rotate(-15deg);
-    margin-left: 40px;
-    margin-top: -72px;
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0);
-    backface-visibility: hidden;
+  .row {
+    display: flex;
+    gap: 0.5rem;
+
+    align-items: baseline;
+    justify-content: left;
   }
 
-  @media screen and (max-width: 800px) {
-    .sb-addon-img {
-      left: 300px;
-    }
-  }
+.card {
+  display: flex;
+  flex-direction: column;
 
-  @media screen and (max-width: 600px) {
-    .sb-section {
-      flex-direction: column;
-    }
+  min-width: 16rem;
 
-    .sb-features-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
+  justify-content: center;
+  align-items: left;
 
-    .sb-socials {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  border-radius: 8px;
 
-    .sb-addon {
-      height: 280px;
-      align-items: flex-start;
-      padding-top: 32px;
-      overflow: hidden;
-    }
+  border: 0.5px solid #000;
+  box-shadow: -3px 2px 0px 1px #000;
 
-    .sb-addon-text {
-      padding-left: 24px;
-    }
+  padding: 20px;
+  margin: 20px;
 
-    .sb-addon-img {
-      right: 0;
-      left: 0;
-      top: 130px;
-      bottom: 0;
-      overflow: hidden;
-      height: auto;
-      width: 124%;
-    }
+  padding-top: none;
+  margin-top: none;
 
-    .sb-addon-img img {
-      width: 1200px;
-      transform: rotate(-12deg);
-      margin-left: 0;
-      margin-top: 48px;
-      margin-bottom: -40px;
-      margin-left: -24px;
-    }
-  }
+  max-width: 300px;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+
+  height: fit-content;
+
+  padding: 0rem;
+
+  justify-content: flex-start;
+  align-items: left;
+
+  line-height: 1rem;
+
+  gap: 0rem;
+}
+
+.titleIcon {
+  display: flex;
+  gap: 0.5rem;
+
+  align-items: center;
+  justify-content: left;
+}
+
+.icon {
+  margin-bottom: 15px;
+  padding: 0rem;
+
+  color: #000;
+  font-size: 14pt
+}
+
+.title {
+  padding: none;
+  margin: none;
+
+  font-size: 20px;
+
+  border: none;
+  text:decoration: none;
+}
+
+.subtitle {
+  padding: none;
+  margin: none;
+
+  font-size: 18px;
+  color: #888888;
+}
+
+.description {
+  padding: none;
+  margin: none;
+
+  margin: 5px 0px;
+
+  font-size: 14px;
+  line-height: 1rem;
+}
+
+p, h2 {
+  margin: 0rem;
+}
   `}
 </style>
