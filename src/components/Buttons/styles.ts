@@ -1,90 +1,87 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-const BaseButton = css`
+const BaseButton = css<{ $themeVariables: Record<string, string | number> }>`
   display: flex;
-
   gap: 0.5rem;
-
   justify-content: center;
   align-items: center;
-
-  padding: var(--button-padding);
-
+  padding: ${({ $themeVariables }) => $themeVariables.buttonPadding};
   background: transparent;
-
-  border-radius: var(--border-radius-small);
-
-  color: var(--text-color);
-
-  font-size: var(--font-size-base);
+  border-radius: ${({ $themeVariables }) => $themeVariables.borderRadiusSmall};
+  color: ${({ $themeVariables }) => $themeVariables.textColor};
+  font-size: ${({ $themeVariables }) => $themeVariables.fontSizeBase};
   cursor: pointer;
-
-  /* Animation */
   transition: background-color 0.5s ease;
 `;
 
-export const DefaultButton = css`
+export const DefaultButton = css<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseButton}
-
-  border: 2px solid var(--shadow-color);
+  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
   background: transparent;
 `;
 
-export const PrimaryButton = css`
+export const PrimaryButton = css<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseButton}
-
-  border: 2px solid var(--shadow-color);
-  background: var(--shadow-color);
-  color: var(--background-color);
+  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
+  background: ${({ $themeVariables }) => $themeVariables.shadowColor};
+  color: ${({ $themeVariables }) => $themeVariables.backgroundColor};
 `;
 
-export const DashedButton = css`
+export const DashedButton = css<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseButton}
-
-  border: 2px dashed var(--shadow-color);
+  border: 2px dashed ${({ $themeVariables }) => $themeVariables.shadowColor};
   background: transparent;
 `;
 
-export const TextButton = css`
+export const TextButton = css<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseButton}
-
   border: none;
   background: transparent;
 `;
 
-export const ShadowButton = css`
+export const ShadowButton = css<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseButton}
-
-  border: 2px solid var(--shadow-color);
+  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
   background: transparent;
   transition: box-shadow 0.5s ease;
+
+  &:hover {
+    box-shadow: -3px 2px 0px 1px
+      ${({ $themeVariables }) => $themeVariables.shadowColor};
+    -webkit-box-shadow: -3px 2px 0px 1px
+      ${({ $themeVariables }) => $themeVariables.shadowColor};
+    -moz-box-shadow: -3px 2px 0px 1px
+      ${({ $themeVariables }) => $themeVariables.shadowColor};
+  }
 `;
 
 export const MinimalButton = styled.button<{
-	$type: "primary" | "default" | "text" | "dashed" | "shadow";
-	$size?: "sm" | "md" | "lg";
+  $type: 'primary' | 'default' | 'text' | 'dashed' | 'shadow';
+  $size?: 'sm' | 'md' | 'lg';
+  $themeVariables: Record<string, string | number>;
 }>`
-  ${(props) => props.$type === "primary" && PrimaryButton}
-  ${(props) => props.$type === "default" && DefaultButton}
-  ${(props) => props.$type === "dashed" && DashedButton}
-  ${(props) => props.$type === "text" && TextButton}
-  ${(props) => props.$type === "shadow" && ShadowButton}
+  ${(props) => props.$type === 'primary' && PrimaryButton}
+  ${(props) => props.$type === 'default' && DefaultButton}
+  ${(props) => props.$type === 'dashed' && DashedButton}
+  ${(props) => props.$type === 'text' && TextButton}
+  ${(props) => props.$type === 'shadow' && ShadowButton}
 
-  ${(props) =>
-		props.$type === "shadow" &&
-		`
   &:hover {
-  box-shadow: -3px 2px 0px 1px var(--shadow-color);
-  -webkit-box-shadow: -3px 2px 0px 1px var(--shadow-color);
-  -moz-box-shadow: -3px 2px 0px 1px var(--shadow-color);
-  }
-  `}
-
     ${(props) =>
-			props.$type !== "shadow" &&
-			`
-&:hover {
-    background-color: #f5f5f5;
-    color: #1f1f1f;
-  `}
+      props.$type !== 'shadow' &&
+      `
+      background-color: #f5f5f5;
+      color: #1f1f1f;
+    `}
+  }
 `;

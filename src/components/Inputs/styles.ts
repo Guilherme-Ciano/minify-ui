@@ -1,41 +1,49 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-const BaseInput = css`
+const BaseInput = css<{ $themeVariables: Record<string, string | number> }>`
   width: 100%;
   padding: 0.5rem;
   border-radius: 4px;
-  border: 2px solid var(--shadow-color);
+  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
   font-size: 1rem;
   transition: border-color 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border-color: ${({ $themeVariables }) => $themeVariables.colorPrimary};
   }
 `;
 
-export const DefaultInput = styled.input`
+export const DefaultInput = styled.input<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseInput}
 `;
 
-export const PrimaryInput = styled.input`
+export const PrimaryInput = styled.input<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseInput}
-  border-color: var(--shadow-color);
+  border-color: ${({ $themeVariables }) => $themeVariables.shadowColor};
 `;
 
-export const ErrorInput = styled.input`
+export const ErrorInput = styled.input<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseInput}
-  border-color: var(--color-quaternary);
+  border-color: ${({ $themeVariables }) => $themeVariables.colorQuaternary};
 `;
 
-export const DisabledInput = styled.input`
+export const DisabledInput = styled.input<{
+  $themeVariables: Record<string, string | number>;
+}>`
   ${BaseInput}
-  border-color: var(--disabled-color);
-  background-color: var(--disabled-background-color);
   cursor: not-allowed;
 `;
 
-export const InputWithIcon = styled.div`
+export const InputWithIcon = styled.div<{
+  $themeVariables: Record<string, string | number>;
+}>`
   position: relative;
   display: flex;
   align-items: center;
@@ -43,20 +51,8 @@ export const InputWithIcon = styled.div`
   svg {
     position: absolute;
     left: 95%;
-    bottom: 0.55rem;
-    color: var(--shadow-color);
-  }
-`;
-
-export const InputWithButton = styled.div`
-  display: flex;
-  align-items: center;
-
-  button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    bottom: 0.6rem;
+    color: ${({ $themeVariables }) => $themeVariables.shadowColor};
   }
 `;
 
