@@ -29,12 +29,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📝 Commit changes
-          run: |
-            git config user.name "${{ secrets.GIT_USER }}"
-            git config user.email "${{ secrets.GIT_EMAIL }}"
-            git add .
-            git commit -m "[AUTO] Bumbing version"
-            git push
+        run: |
+          git config user.name "${{ secrets.GIT_USER }}"
+          git config user.email "${{ secrets.GIT_EMAIL }}"
+          git add .
+          git commit -m "[AUTO] Bumbing version"
+          git push
 
   publish:
     name: 🚀 Publish to NPM
