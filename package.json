@@ -5,6 +5,7 @@
     "type": "git",
     "url": "https://github.com/Guilherme-Ciano/minify-ui"
   },
+  "homepage": "https://minify-ui.vercel.app",
   "keywords": [],
   "author": "Guilherme Ciano",
   "license": "MIT",
