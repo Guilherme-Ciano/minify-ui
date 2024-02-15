@@ -48,7 +48,7 @@ jobs:
 
   publish:
     name: 🚀 Publish to NPM
-    needs: commit-changes
+    needs: update-version
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
