@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const BaseInput = css<{ $themeVariables: Record<string, string | number> }>`
   width: 100%;
@@ -15,34 +15,34 @@ const BaseInput = css<{ $themeVariables: Record<string, string | number> }>`
 `;
 
 export const DefaultInput = styled.input<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseInput}
 `;
 
 export const PrimaryInput = styled.input<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseInput}
   border-color: ${({ $themeVariables }) => $themeVariables.shadowColor};
 `;
 
 export const ErrorInput = styled.input<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseInput}
   border-color: ${({ $themeVariables }) => $themeVariables.colorQuaternary};
 `;
 
 export const DisabledInput = styled.input<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseInput}
   cursor: not-allowed;
 `;
 
 export const InputWithIcon = styled.div<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   position: relative;
   display: flex;

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const BaseButton = css<{ $themeVariables: Record<string, string | number> }>`
   display: flex;
@@ -15,7 +15,7 @@ const BaseButton = css<{ $themeVariables: Record<string, string | number> }>`
 `;
 
 export const DefaultButton = css<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseButton}
   border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
@@ -23,7 +23,7 @@ export const DefaultButton = css<{
 `;
 
 export const PrimaryButton = css<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseButton}
   border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
@@ -32,7 +32,7 @@ export const PrimaryButton = css<{
 `;
 
 export const DashedButton = css<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseButton}
   border: 2px dashed ${({ $themeVariables }) => $themeVariables.shadowColor};
@@ -40,7 +40,7 @@ export const DashedButton = css<{
 `;
 
 export const TextButton = css<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseButton}
   border: none;
@@ -48,7 +48,7 @@ export const TextButton = css<{
 `;
 
 export const ShadowButton = css<{
-  $themeVariables: Record<string, string | number>;
+	$themeVariables: Record<string, string | number>;
 }>`
   ${BaseButton}
   border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
@@ -66,20 +66,20 @@ export const ShadowButton = css<{
 `;
 
 export const MinimalButton = styled.button<{
-  $type: 'primary' | 'default' | 'text' | 'dashed' | 'shadow';
-  $size?: 'sm' | 'md' | 'lg';
-  $themeVariables: Record<string, string | number>;
+	$type: "primary" | "default" | "text" | "dashed" | "shadow";
+	$size?: "sm" | "md" | "lg";
+	$themeVariables: Record<string, string | number>;
 }>`
-  ${(props) => props.$type === 'primary' && PrimaryButton}
-  ${(props) => props.$type === 'default' && DefaultButton}
-  ${(props) => props.$type === 'dashed' && DashedButton}
-  ${(props) => props.$type === 'text' && TextButton}
-  ${(props) => props.$type === 'shadow' && ShadowButton}
+  ${(props) => props.$type === "primary" && PrimaryButton}
+  ${(props) => props.$type === "default" && DefaultButton}
+  ${(props) => props.$type === "dashed" && DashedButton}
+  ${(props) => props.$type === "text" && TextButton}
+  ${(props) => props.$type === "shadow" && ShadowButton}
 
   &:hover {
     ${(props) =>
-      props.$type !== 'shadow' &&
-      `
+			props.$type !== "shadow" &&
+			`
       background-color: #f5f5f5;
       color: #1f1f1f;
     `}
