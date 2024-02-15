@@ -1,0 +1,90 @@
+:root {
+  /* Fontes */
+  --font-family-sans-serif: "Roboto", sans-serif;
+  --font-family-serif: "Roboto Slab", serif;
+  --font-size-base: 1.2rem;
+  --font-color: #131313;
+
+  /* Cores */
+  --color-white: #fafafa;
+  --color-black: #131313;
+  --color-primary: #4285f4; /* Azul */
+  --color-secondary: #34a853; /* Verde */
+  --color-tertiary: #fbbc05; /* Amarelo */
+  --color-quaternary: #ea4335; /* Vermelho */
+
+  /* Pesos das Fontes */
+  --font-weight-light: 100;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-bolder: 900;
+
+  /* Espaçamento */
+  --spacing-small: 0.8rem; /* 8px */
+  --spacing-medium: 1.6rem; /* 16px */
+  --spacing-large: 2.4rem; /* 24px */
+
+  /* Bordas */
+  --border-radius-small: 0.2rem;
+  --border-radius-medium: 0.4rem;
+  --border-radius-large: 0.8rem;
+  --border-width: 1px;
+  --border-style: solid;
+
+  /* Transições */
+  --transition-duration: 0.3s;
+
+  /* Margens e Preenchimentos */
+  --margin-small: 0.8rem; /* 8px */
+  --margin-medium: 1.6rem; /* 16px */
+  --margin-large: 2.4rem; /* 24px */
+  --padding-small: 0.8rem; /* 8px */
+  --padding-medium: 1.6rem; /* 16px */
+  --padding-large: 2.4rem; /* 24px */
+
+  /* Altura e Largura */
+  --width-small: 20rem; /* 200px */
+  --width-medium: 40rem; /* 400px */
+  --width-large: 60rem; /* 600px */
+  --height-small: 20rem; /* 200px */
+  --height-medium: 40rem; /* 400px */
+  --height-large: 60rem; /* 600px */
+
+  /* Opacidade */
+  --opacity-light: 0.5;
+  --opacity-medium: 0.7;
+  --opacity-heavy: 0.9;
+
+  /* Z-Index */
+  --z-index-low: 10;
+  --z-index-medium: 50;
+  --z-index-high: 100;
+
+  /* Posicionamento */
+  --position-relative: relative;
+  --position-absolute: absolute;
+  --position-fixed: fixed;
+  --position-static: static;
+
+  /* Cores de transição */
+  --background-color: var(--color-white);
+  --shadow-color: var(--color-black);
+  --text-color: var(--color-black);
+
+  /* Button */
+  --button-padding: 0.2rem 0.5rem;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+
+#root {
+  min-height: 100vh;
+}

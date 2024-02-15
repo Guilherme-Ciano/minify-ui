@@ -1,0 +1,41 @@
+{
+  "name": "minimal-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @biomejs/biome check --apply src/ && webpack --mode production",
+    "check": "npx @biomejs/biome check --apply src/",
+    "publish": "npm publish"
+  },
+  "keywords": [],
+  "author": "Guilherme Ciano",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@swc/core": "^1.4.1",
+    "@types/lodash": "^4.14.202",
+    "css-loader": "^6.10.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.8.0",
+    "style-loader": "^3.3.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "styled-components": "^6.1.8",
+    "tslib": "^2.6.2"
+  }
+}
