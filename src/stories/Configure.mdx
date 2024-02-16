@@ -5,65 +5,21 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 import { GrConfigure } from 'react-icons/gr';
 import { BsFeather } from 'react-icons/bs';
 
-import Navbar from './homepage/navbar';
+import Navbar from './pages/homepage/navbar';
+import Homepage from './pages/homepage';
+import SetupPage from './pages/Setup';
 
 <Meta title="Home" />
 
 <Navbar />
-<div class="page" id='home'>
-
-<div class="header">
-  <h1 className="headerTitle">Minify UI</h1>
-  <h3 className="headerSubtitle">Streamlining Front-End Excellence</h3>
-</div>
-
-<div class="row">
-<div class="card">
-  <div class="titleSection">
-    <div class="titleIcon">
-      <MdOutlineDesignServices class="icon" />
-      <h2 class="title">Streamlined Design</h2>
-    </div>
-    <h3 class="subtitle">Subtítulo do Card</h3>
-  </div>
-
-  <p class="description">
-    Minimalist design ethos, delivering sleek and uncluttered UI components that seamlessly integrate into any project.
-  </p>
-</div>
-
-<div class="card">
-  <div class="titleSection">
-    <div class="titleIcon">
-      <GrConfigure class="icon" />
-      <h2 class="title">Easy Customization</h2>
-    </div>
-    <h3 class="subtitle">Subtítulo do Card</h3>
-  </div>
-
-  <p class="description">
-    Effortlessly customize and extend components to align with your project's unique design specifications.
-  </p>
-</div>
-
-<div class="card">
-  <div class="titleSection">
-    <div class="titleIcon">
-      <BsFeather class="icon" />
-      <h2 class="title">Lightweight</h2>
-    </div>
-    <h3 class="subtitle">Subtítulo do Card</h3>
-  </div>
-
-  <p class="description">
-    Engineered for performance, Minify UI is lightweight, ensuring swift load times and fluid user experiences.
-  </p>
-</div>
-</div>
-</div>
+<Homepage />
+<SetupPage />
 
 <style>
   {`
+  html {
+    scroll-behavior: smooth;
+  }
 
   .page {
     height: 100vh;
@@ -85,6 +41,8 @@ import Navbar from './homepage/navbar';
   }
 
   .headerTitle {
+    height: fit-content;
+
     color: #000;
 
     font-size: 64pt;
@@ -106,6 +64,22 @@ import Navbar from './homepage/navbar';
 
     align-items: baseline;
     justify-content: left;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+  }
+
+  .sectionText .headerTitle {
+    height: fit-content;
+
+    color: #000;
+
+    font-size: 32pt;
+    font-weight: bolder;
   }
 
 .card {
@@ -194,5 +168,37 @@ import Navbar from './homepage/navbar';
 p, h2 {
   margin: 0rem;
 }
+
+  #setup {
+  display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .titleInfo {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 3rem;
+  }
+
+  .subtitleInfo {
+    color: #000;
+
+    font-size: 12pt;
+    font-weight: light;
+  }
+
+  .infoContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoContent p {
+    margin: 0px;
+
+    display: flex;
+    gap: 5px;
+  }
   `}
 </style>
