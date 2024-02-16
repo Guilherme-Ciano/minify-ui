@@ -1,15 +1,24 @@
-# Minify UI
+<p align="center" height="370">
+<img align="center" height="370" src="https://raw.githubusercontent.com/Guilherme-Ciano/minify-ui/main/src/stories/assets/Logos/Brand_White.png">
+</p>
 
-minify-ui is a minimalist and customizable component library designed to simplify front-end development. With a focus on simplicity and ease of customization, minify-ui provides a set of essential UI components to help you build beautiful and responsive web applications with minimal effort.
+<p align="center">
+<img alt="Codecov" src="https://img.shields.io/npm/dw/minify-ui
+?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/github/commit-activity/w/Guilherme-Ciano/minify-ui
+?style=for-the-badge&labelColor=000000">
+<img alt="CircleCI" src="https://img.shields.io/github/actions/workflow/status/Guilherme-Ciano/minify-ui/publish.yml
+?style=for-the-badge&labelColor=000000">
+<img alt="npm (scoped)" src="https://img.shields.io/npm/v/minify-ui?style=for-the-badge&labelColor=000000">
+</p>
 
-## Features
+> ⚠️ DO NOT DOWNLOAD RIGHT NOW, WAIT UNTIL THE 1.0.0 RELEASE
+> <br />
+> It's important to address the fact that I'm still developing the core features. With that in mind, I strongly DO NOT RECOMMEND downloading the package for your project at this time. Soon, there will be more components and features to enhance your experiences and designs. Thank you for stopping by! 😁
 
-- **Minimalist Design:** minify-ui follows a minimalist design philosophy, offering clean and simple UI components that integrate seamlessly into any project.
-- **Easy Customization:** Customize and extend components effortlessly to match your project's unique design requirements.
-- **Responsive Layouts:** Build responsive web applications with ease using minify-ui's responsive layout components.
-- **Lightweight:** Designed to be lightweight and performant, minify-ui ensures fast load times and smooth user experiences.
+<br/>
 
-## Installation
+## Quick Start
 
 You can install minify-ui via npm:
 
@@ -20,18 +29,6 @@ npm install minify-ui
 ## Usage
 
 Import and use components from minify-ui in your React project:
-
-```jsx
-/* main.tsx */
-
-import "minify-ui/src/utils/globalStyles.css";
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-```
 
 ```jsx
 /* App.tsx */
@@ -53,7 +50,7 @@ export default App;
 
 ## Documentation
 
-For detailed documentation and usage examples, we will later on build a documentation properly.
+- [Document Site](https://minify-ui.vercel.app/)
 
 ## Contributing
 
