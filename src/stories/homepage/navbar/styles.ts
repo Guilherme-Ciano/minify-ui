@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
   position: fixed;
@@ -7,6 +7,19 @@ export const NavbarWrapper = styled.nav`
   width: 100%;
   background-color: #ffffff;
   padding: 10px 0;
+  display: grid;
+  grid-template-columns: 8rem calc(100% - 23rem);
+
+  padding-left: 2rem;
+
+  gap: 2rem;
+
+  & img {
+    width: 8rem;
+  }
+`;
+
+export const NavbarItems = styled.nav`
   display: flex;
   justify-content: center;
   gap: 2rem;
