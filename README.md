@@ -1,5 +1,5 @@
 <p align="center" height="370">
-<img align="center" height="370" src="https://raw.githubusercontent.com/Guilherme-Ciano/minify-ui/main/src/stories/assets/Logos/Brand_White.png">
+<img align="center" height="370" src="https://raw.githubusercontent.com/Guilherme-Ciano/minify-ui/main/src/stories/assets/Logos/Brand_BG_Black.png">
 </p>
 
 <p align="center">
