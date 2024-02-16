@@ -1,14 +1,11 @@
 <p align="center" height="370">
-<img align="center" height="370" src="https://raw.githubusercontent.com/Guilherme-Ciano/minify-ui/main/src/stories/assets/Logos/Brand_White.png">
+<img align="center" src="https://raw.githubusercontent.com/Guilherme-Ciano/minify-ui/main/src/stories/assets/Logos/Brand%20_White.png">
 </p>
 
 <p align="center">
-<img alt="Codecov" src="https://img.shields.io/npm/dw/minify-ui
-?style=for-the-badge&labelColor=000000">
-<img alt="Codecov" src="https://img.shields.io/github/commit-activity/w/Guilherme-Ciano/minify-ui
-?style=for-the-badge&labelColor=000000">
-<img alt="CircleCI" src="https://img.shields.io/github/actions/workflow/status/Guilherme-Ciano/minify-ui/publish.yml
-?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/npm/dw/minify-ui?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/github/commit-activity/w/Guilherme-Ciano/minify-ui?style=for-the-badge&labelColor=000000">
+<img alt="CircleCI" src="https://img.shields.io/github/actions/workflow/status/Guilherme-Ciano/minify-ui/publish.yml?style=for-the-badge&labelColor=000000">
 <img alt="npm (scoped)" src="https://img.shields.io/npm/v/minify-ui?style=for-the-badge&labelColor=000000">
 </p>
 
