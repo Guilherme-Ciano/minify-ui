@@ -11,7 +11,6 @@
   "license": "MIT",
   "description": "",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "module": "dist/index.js",
   "files": [
     "dist",
@@ -57,16 +56,11 @@
     "@types/lodash": "^4.14.202",
     "css-loader": "^6.10.0",
     "esbuild": "^0.20.0",
-    "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.8.0",
     "storybook": "^7.6.15",
     "style-loader": "^3.3.4",
-    "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.90.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.0"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
     "@types/react": "^18.2.55",
