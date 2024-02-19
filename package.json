@@ -16,7 +16,7 @@
     "dist",
     "src",
     "minify-ui.d.ts",
-    "index.ts"
+    "index.tsx"
   ],
   "scripts": {
     "dev": "webpack-dev-server --open",
