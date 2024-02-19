@@ -16,7 +16,7 @@
   "module": "dist/esm/index.js",
   "files": [
     "dist",
-    "src/index.ts"
+    "src"
   ],
   "scripts": {
     "dev": "webpack-dev-server --open",
