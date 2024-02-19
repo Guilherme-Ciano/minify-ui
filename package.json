@@ -22,10 +22,9 @@
   "scripts": {
     "dev": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && npx @biomejs/biome check --apply src/ && webpack --mode production",
-    "build:esbuild": "rm -rf dist && esbuild index.ts --bundle --outdir=dist",
+    "build": "rm -rf dist && npx @biomejs/biome check --apply src/ && esbuild index.ts --bundle --outdir=dist",
     "check": "npx @biomejs/biome check --apply src/",
-    "publish:test": "pnpm run build:esbuild && npm version patch --no-git-tag-version && npm publish",
+    "publish:test": "pnpm run build && npm version patch --no-git-tag-version && npm publish",
     "publish:release": "pnpm run build && npm version minor && npm publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
