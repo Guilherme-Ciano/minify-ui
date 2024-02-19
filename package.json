@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && npx @biomejs/biome check --apply src/ && webpack --mode production",
+    "build": "rm -rf dist && npx @biomejs/biome check --apply src/ && esbuild index.ts --bundle --outdir=dist",
     "check": "npx @biomejs/biome check --apply src/",
     "publish:test": "pnpm run build && npm version patch --no-git-tag-version && npm publish",
     "publish:release": "pnpm run build && npm version minor && npm publish",
@@ -56,6 +56,7 @@
     "@swc/core": "^1.4.1",
     "@types/lodash": "^4.14.202",
     "css-loader": "^6.10.0",
+    "esbuild": "^0.20.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.8.0",
     "storybook": "^7.6.15",
