@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && npx @biomejs/biome check --apply src/ && rollup --config rollup.config.js --bundleConfigAsCjs",
+    "build": "rollup --config rollup.config.js --bundleConfigAsCjs",
     "check": "npx @biomejs/biome check --apply src/",
     "publish:test": "pnpm run build && npm version patch --no-git-tag-version && npm publish",
     "publish:release": "pnpm run build && npm version minor && npm publish",
