@@ -28,8 +28,6 @@ npm install minify-ui
 Import and use components from minify-ui in your React project:
 
 ```jsx
-/* App.tsx */
-
 import React from 'react';
 import { Button, Input } from 'minify-ui';
 
