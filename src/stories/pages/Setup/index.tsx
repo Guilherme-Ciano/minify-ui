@@ -142,7 +142,7 @@ export default function SetupPage() {
               language="typescript"
               code={`
           import React from 'react';
-          import { Button, Input } from 'minify-ui/index';
+          import { Button, Input } from 'minify-ui';
           
           export default function App() {
               return (

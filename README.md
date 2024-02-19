@@ -31,7 +31,7 @@ Import and use components from minify-ui in your React project:
 /* App.tsx */
 
 import React from 'react';
-import { Button, Input } from 'minify-ui/index';
+import { Button, Input } from 'minify-ui';
 
 function App() {
   return (
