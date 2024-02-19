@@ -5,6 +5,7 @@ esbuild
     entryPoints: ['./index.ts'],
     bundle: true,
     outdir: 'dist',
+    outfile: './dist/index.js',
     platform: 'browser',
     format: 'esm',
     sourcemap: true,
