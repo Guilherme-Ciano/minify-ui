@@ -56,7 +56,6 @@
     "@types/lodash": "^4.14.202",
     "css-loader": "^6.10.0",
     "esbuild": "^0.20.0",
-    "mini-css-extract-plugin": "^2.8.0",
     "storybook": "^7.6.15",
     "style-loader": "^3.3.4",
     "ts-loader": "^9.5.1",
