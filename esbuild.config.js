@@ -5,9 +5,8 @@ esbuild
     entryPoints: ['./index.ts'],
     bundle: true,
     outfile: './dist/index.js',
-    platform: 'browser',
+    platform: 'neutral',
     format: 'esm',
-    sourcemap: true,
     target: 'es2017',
   })
   .catch(() => process.exit(1));
