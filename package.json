@@ -27,7 +27,7 @@
     "build-storybook": "storybook build"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=10"
   },
   "peerDependencies": {
     "react": ">=16"
