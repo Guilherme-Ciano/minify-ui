@@ -2,7 +2,7 @@ const esbuild = require('esbuild');
 
 esbuild
   .build({
-    entryPoints: ['./index.tsx'],
+    entryPoints: ['./index.ts'],
     bundle: true,
     outdir: 'dist',
     platform: 'browser',
