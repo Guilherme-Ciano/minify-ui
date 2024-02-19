@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "./components/Buttons/index";
 
 import { FaAddressBook, FaSave } from "react-icons/fa";
 
-import Input from "./components/Inputs";
-import { A, H1, H2, H3, P } from "./components/Typography";
+import { A, Button, H1, H2, H3, Input, P } from "./components";
 
 const App: React.FC = () => {
 	return (

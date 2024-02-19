@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import React from "react";
 import { FaAddressCard } from "react-icons/fa";
-import Input from "./index";
+import Input from "./Input";
 
 const meta: Meta = {
 	title: "Components/Input",

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import React from "react";
 import { FaSave } from "react-icons/fa";
-import Button from "./index";
+import Button from "./Button";
 
 const meta = {
 	title: "Components/Button",
