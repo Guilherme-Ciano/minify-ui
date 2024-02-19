@@ -5,6 +5,6 @@ esbuild
     entryPoints: ['./index.ts'],
     outfile: './dist/index.js',
     platform: 'neutral',
-    format: 'esm',
+    format: 'cjs',
   })
   .catch(() => process.exit(1));
