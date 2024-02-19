@@ -9,6 +9,5 @@ esbuild
     format: 'esm',
     sourcemap: true,
     target: 'es2017',
-    jsx: 'react',
   })
   .catch(() => process.exit(1));
