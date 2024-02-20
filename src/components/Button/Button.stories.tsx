@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { FaSave } from 'react-icons/fa';
 import Button from './Button';
+import { MinifyUIThemeProvider } from '../Theme';
 
 const meta = {
   title: 'Components/Button',
@@ -22,6 +23,11 @@ export const Default: Story = {
     type: 'default',
     children: <span>Button</span>,
   },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Button {...args}></Button>
+    </MinifyUIThemeProvider>
+  ),
 };
 
 export const Primary: Story = {
@@ -30,6 +36,11 @@ export const Primary: Story = {
     type: 'primary',
     children: <span>Button</span>,
   },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Button {...args}></Button>
+    </MinifyUIThemeProvider>
+  ),
 };
 
 export const Dashed: Story = {
@@ -37,6 +48,11 @@ export const Dashed: Story = {
     type: 'dashed',
     children: <span>Button</span>,
   },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Button {...args}></Button>
+    </MinifyUIThemeProvider>
+  ),
 };
 
 export const Text: Story = {
@@ -44,6 +60,11 @@ export const Text: Story = {
     type: 'text',
     children: <span>Button</span>,
   },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Button {...args}></Button>
+    </MinifyUIThemeProvider>
+  ),
 };
 
 export const Shadow: Story = {
@@ -52,4 +73,9 @@ export const Shadow: Story = {
     type: 'shadow',
     children: <span>Button</span>,
   },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Button {...args}></Button>
+    </MinifyUIThemeProvider>
+  ),
 };

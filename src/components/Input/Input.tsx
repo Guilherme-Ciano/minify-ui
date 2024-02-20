@@ -9,7 +9,6 @@ import {
   InputWithIcon,
   PrimaryInput,
 } from './styles';
-import { MinimalUIThemeProvider } from '../Theme';
 
 interface InputProps {
   type?:
@@ -71,19 +70,17 @@ export default function Input({
   }
 
   return (
-    <MinimalUIThemeProvider>
-      <div className={className}>
-        {label && <InputLabel>{label}</InputLabel>}
-        <InputComponent
-          type={type}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-        />
-        {icon && <InputWithIcon>{icon}</InputWithIcon>}
-        {feedback && <InputFeedback>{feedback}</InputFeedback>}
-      </div>
-    </MinimalUIThemeProvider>
+    <div className={className}>
+      {label && <InputLabel>{label}</InputLabel>}
+      <InputComponent
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        disabled={disabled}
+      />
+      {icon && <InputWithIcon>{icon}</InputWithIcon>}
+      {feedback && <InputFeedback>{feedback}</InputFeedback>}
+    </div>
   );
 }

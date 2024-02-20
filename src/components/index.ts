@@ -4,8 +4,8 @@ export { BasePadding, Column, PageWrapper, Row } from './Layout';
 export { A, H1, H2, H3, P } from './Typography';
 export { default as Terminal } from './Terminal';
 export {
-  MinimalUIThemeProvider,
-  MinimalUIThemeProviderProps,
-  MinimalUITheme,
-  MinimalUIThemeProps,
+  MinifyUITheme,
+  MinifyUIThemeProps,
+  MinifyUIThemeProvider,
+  MinifyUIThemeProviderProps,
 } from './Theme';
