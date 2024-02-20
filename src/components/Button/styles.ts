@@ -1,87 +1,123 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-const BaseButton = css<{ $themeVariables: Record<string, string | number> }>`
+interface ButtonProps {
+  $type: 'primary' | 'default' | 'text' | 'dashed' | 'shadow';
+  $size?: 'sm' | 'md' | 'lg';
+  $isDisabled: boolean;
+}
+
+const buttonSizes = {
+  sm: css`
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  `,
+  md: css`
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  `,
+  lg: css`
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  `,
+};
+
+const BaseButton = css<ButtonProps>`
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  padding: ${({ $themeVariables }) => $themeVariables.buttonPadding};
+  padding: ${(props) => props.theme.spacingVariables.spacingSmall};
   background: transparent;
-  border-radius: ${({ $themeVariables }) => $themeVariables.borderRadiusSmall};
-  color: ${({ $themeVariables }) => $themeVariables.textColor};
-  font-size: ${({ $themeVariables }) => $themeVariables.fontSizeBase};
+  border-radius: ${(props) => props.theme.borderVariables.borderRadiusSmall};
+  color: ${(props) => props.theme.fontVariables.fontColor};
+  font-family: ${(props) => props.theme.fontVariables.fontFamilySansSerif};
+  font-size: ${(props) => props.theme.fontVariables.fontSizeBase};
+  font-weight: ${(props) => props.theme.fontVariables.fontWeightLightBold};
   cursor: pointer;
   transition: background-color 0.5s ease;
 `;
 
-export const DefaultButton = css<{
-	$themeVariables: Record<string, string | number>;
-}>`
+export const MinimalButton = styled.button<ButtonProps>`
   ${BaseButton}
-  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
-  background: transparent;
-`;
+  ${({ $size }) => buttonSizes[$size || 'sm']}
 
-export const PrimaryButton = css<{
-	$themeVariables: Record<string, string | number>;
-}>`
-  ${BaseButton}
-  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
-  background: ${({ $themeVariables }) => $themeVariables.shadowColor};
-  color: ${({ $themeVariables }) => $themeVariables.backgroundColor};
-`;
+  // Button type styles
+  ${({ $type }) => {
+    switch ($type) {
+      case 'primary':
+        return css`
+          border: 2px solid
+            ${(props) => props.theme.colorVariables.colorPrimary};
+          background: ${(props) => props.theme.colorVariables.colorPrimary};
+          color: ${(props) => props.theme.colorVariables.colorWhite};
+          transition: box-shadow 0.5s ease;
+        `;
+      case 'default':
+        return css`
+          border: 2px solid ${(props) => props.theme.colorVariables.colorBlack};
+          background: transparent;
+        `;
+      case 'dashed':
+        return css`
+          border: 2px dashed ${(props) => props.theme.colorVariables.colorBlack};
+          background: transparent;
+        `;
+      case 'text':
+        return css`
+          border: none;
+          background: transparent;
+        `;
+      case 'shadow':
+        return css`
+          border: 2px solid ${(props) => props.theme.colorVariables.colorBlack};
+          background: transparent;
+          transition: box-shadow 0.5s ease;
 
-export const DashedButton = css<{
-	$themeVariables: Record<string, string | number>;
-}>`
-  ${BaseButton}
-  border: 2px dashed ${({ $themeVariables }) => $themeVariables.shadowColor};
-  background: transparent;
-`;
-
-export const TextButton = css<{
-	$themeVariables: Record<string, string | number>;
-}>`
-  ${BaseButton}
-  border: none;
-  background: transparent;
-`;
-
-export const ShadowButton = css<{
-	$themeVariables: Record<string, string | number>;
-}>`
-  ${BaseButton}
-  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
-  background: transparent;
-  transition: box-shadow 0.5s ease;
+          &:hover {
+            box-shadow: -3px 2px 0px 1px
+              ${(props) => props.theme.colorVariables.colorBlack};
+            -webkit-box-shadow: -3px 2px 0px 1px
+              ${(props) => props.theme.colorVariables.colorBlack};
+            -moz-box-shadow: -3px 2px 0px 1px
+              ${(props) => props.theme.colorVariables.colorBlack};
+          }
+        `;
+      default:
+        return css`
+          border: 2px solid ${(props) => props.theme.colorVariables.colorBlack};
+          background: transparent;
+        `;
+    }
+  }}
 
   &:hover {
-    box-shadow: -3px 2px 0px 1px
-      ${({ $themeVariables }) => $themeVariables.shadowColor};
-    -webkit-box-shadow: -3px 2px 0px 1px
-      ${({ $themeVariables }) => $themeVariables.shadowColor};
-    -moz-box-shadow: -3px 2px 0px 1px
-      ${({ $themeVariables }) => $themeVariables.shadowColor};
+    ${({ $type }) =>
+      $type === 'default' &&
+      css`
+        background-color: ${(props) => props.theme.colorVariables.colorWhite};
+        color: ${(props) => props.theme.colorVariables.colorBlack};
+      `}
+
+    ${({ $type }) =>
+      $type === 'primary' &&
+      css`
+        box-shadow: -3px 2px 38px -13px ${(props) => props.theme.colorVariables.colorPrimary};
+        -webkit-box-shadow: -3px 2px 38px -13px ${(props) => props.theme.colorVariables.colorPrimary};
+        -moz-box-shadow: -3px 2px 38px -13px ${(props) => props.theme.colorVariables.colorPrimary};
+      `}
   }
-`;
 
-export const MinimalButton = styled.button<{
-	$type: "primary" | "default" | "text" | "dashed" | "shadow";
-	$size?: "sm" | "md" | "lg";
-	$themeVariables: Record<string, string | number>;
-}>`
-  ${(props) => props.$type === "primary" && PrimaryButton}
-  ${(props) => props.$type === "default" && DefaultButton}
-  ${(props) => props.$type === "dashed" && DashedButton}
-  ${(props) => props.$type === "text" && TextButton}
-  ${(props) => props.$type === "shadow" && ShadowButton}
+  ${({ $isDisabled }) =>
+    $isDisabled &&
+    css`
+      background: ${(props) => props.theme.colorVariables.colorWhite};
+      border: 2px solid ${(props) => props.theme.colorVariables.colorBlack};
+      color: ${(props) => props.theme.colorVariables.colorBlack};
 
-  &:hover {
-    ${(props) =>
-			props.$type !== "shadow" &&
-			`
-      background-color: #f5f5f5;
-      color: #1f1f1f;
+      &:hover {
+        background: ${(props) => props.theme.colorVariables.colorWhite};
+        color: ${(props) => props.theme.colorVariables.colorBlack};
+        cursor: not-allowed;
+      }
     `}
-  }
 `;

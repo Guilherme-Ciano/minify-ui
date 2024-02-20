@@ -1,49 +1,39 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-const BaseInput = css<{ $themeVariables: Record<string, string | number> }>`
+const BaseInput = css`
   width: 100%;
   padding: 0.5rem;
   border-radius: 4px;
-  border: 2px solid ${({ $themeVariables }) => $themeVariables.shadowColor};
+  border: 2px solid ${(props) => props.theme.colorVariables.shadowColor};
   font-size: 1rem;
   transition: border-color 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: ${({ $themeVariables }) => $themeVariables.colorPrimary};
+    border-color: ${(props) => props.theme.colorVariables.colorPrimary};
   }
 `;
 
-export const DefaultInput = styled.input<{
-	$themeVariables: Record<string, string | number>;
-}>`
+export const DefaultInput = styled.input`
   ${BaseInput}
 `;
 
-export const PrimaryInput = styled.input<{
-	$themeVariables: Record<string, string | number>;
-}>`
+export const PrimaryInput = styled.input`
   ${BaseInput}
-  border-color: ${({ $themeVariables }) => $themeVariables.shadowColor};
+  border-color: ${(props) => props.theme.colorVariables.shadowColor};
 `;
 
-export const ErrorInput = styled.input<{
-	$themeVariables: Record<string, string | number>;
-}>`
+export const ErrorInput = styled.input`
   ${BaseInput}
-  border-color: ${({ $themeVariables }) => $themeVariables.colorQuaternary};
+  border-color: ${(props) => props.theme.colorVariables.colorError};
 `;
 
-export const DisabledInput = styled.input<{
-	$themeVariables: Record<string, string | number>;
-}>`
+export const DisabledInput = styled.input`
   ${BaseInput}
   cursor: not-allowed;
 `;
 
-export const InputWithIcon = styled.div<{
-	$themeVariables: Record<string, string | number>;
-}>`
+export const InputWithIcon = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -52,7 +42,7 @@ export const InputWithIcon = styled.div<{
     position: absolute;
     left: 95%;
     bottom: 0.6rem;
-    color: ${({ $themeVariables }) => $themeVariables.shadowColor};
+    color: ${(props) => props.theme.colorVariables.shadowColor};
   }
 `;
 
