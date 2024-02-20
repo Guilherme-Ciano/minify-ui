@@ -1,7 +1,7 @@
 import { isUndefined } from 'lodash';
 import React from 'react';
 import { MinimalButton } from './styles';
-import MinimalUIThemeProvider from '../Theme/Theme';
+import { MinimalUIThemeProvider } from '../Theme/Theme';
 
 interface ButtonProps {
   type: 'primary' | 'default' | 'text' | 'dashed' | 'shadow';

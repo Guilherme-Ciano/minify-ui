@@ -3,18 +3,18 @@ import { GlobalVariablesProps } from './interfaces';
 import React from 'react';
 import { globalVariables } from './variables';
 
-export interface ThemeProviderProps {
+export interface MinimalUIThemeProviderProps {
   theme?: GlobalVariablesProps;
   children: JSX.Element;
 }
 
-const MinimalUIThemeProvider: React.FC<ThemeProviderProps> = ({
+export function MinimalUIThemeProvider({
   theme = globalVariables,
   children,
-}) => (
-  <StyledComponentsThemeProvider theme={theme}>
-    {children}
-  </StyledComponentsThemeProvider>
-);
-
-export default MinimalUIThemeProvider;
+}: MinimalUIThemeProviderProps) {
+  return (
+    <StyledComponentsThemeProvider theme={theme}>
+      {children}
+    </StyledComponentsThemeProvider>
+  );
+}

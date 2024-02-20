@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ThemeProvider from './index';
+import { MinimalUIThemeProvider } from './index';
 import { Button } from '..';
 import { globalVariables } from './variables';
 import React from 'react';
 
 const meta = {
   title: 'Components/Theme provider',
-  component: ThemeProvider,
+  component: MinimalUIThemeProvider,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof ThemeProvider>;
+} satisfies Meta<typeof MinimalUIThemeProvider>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
