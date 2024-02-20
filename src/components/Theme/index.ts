@@ -1,3 +1,3 @@
-export { MinimalUIThemeProviderProps, MinimalUIThemeProvider } from './Theme';
-export { globalVariables as MinimalUITheme } from './variables';
-export { GlobalVariablesProps as MinimalUIThemeProps } from './interfaces';
+export { MinifyUIThemeProviderProps, MinifyUIThemeProvider } from './Theme';
+export { globalVariables as MinifyUITheme } from './variables';
+export { GlobalVariablesProps as MinifyUIThemeProps } from './interfaces';

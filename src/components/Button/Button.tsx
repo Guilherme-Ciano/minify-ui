@@ -1,7 +1,6 @@
 import { isUndefined } from 'lodash';
 import React from 'react';
 import { MinimalButton } from './styles';
-import { MinimalUIThemeProvider } from '../Theme/Theme';
 
 interface ButtonProps {
   type: 'primary' | 'default' | 'text' | 'dashed' | 'shadow';
@@ -31,21 +30,19 @@ export default function Button({
   const hasTrailIcon = !isUndefined(trailIcon);
 
   return (
-    <MinimalUIThemeProvider>
-      <MinimalButton
-        id={id}
-        className={className}
-        $type={type}
-        $size={size}
-        $isDisabled={isDisabled}
-        onClick={onClick}
-        disabled={isDisabled}
-      >
-        {hasIcon && icon}
-        {children}
-        {hasTrailIcon && trailIcon}
-      </MinimalButton>
-    </MinimalUIThemeProvider>
+    <MinimalButton
+      id={id}
+      className={className}
+      $type={type}
+      $size={size}
+      $isDisabled={isDisabled}
+      onClick={onClick}
+      disabled={isDisabled}
+    >
+      {hasIcon && icon}
+      {children}
+      {hasTrailIcon && trailIcon}
+    </MinimalButton>
   );
 }
 

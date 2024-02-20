@@ -3,15 +3,15 @@ import { GlobalVariablesProps } from './interfaces';
 import React from 'react';
 import { globalVariables } from './variables';
 
-export interface MinimalUIThemeProviderProps {
+export interface MinifyUIThemeProviderProps {
   theme?: GlobalVariablesProps;
   children: JSX.Element;
 }
 
-export function MinimalUIThemeProvider({
+export function MinifyUIThemeProvider({
   theme = globalVariables,
   children,
-}: MinimalUIThemeProviderProps) {
+}: MinifyUIThemeProviderProps) {
   return (
     <StyledComponentsThemeProvider theme={theme}>
       {children}
