@@ -1,0 +1,86 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+# Input Component Documentation
+
+The `Input` component provides a flexible and customizable input field for user input. It supports various types of input fields such as text, password, email, etc., along with additional features like icons, labels, feedback messages, and different visual variants.
+
+## All Variants
+
+<Canvas of={InputStories.AllVariants} />
+
+## Use Cases
+
+### 1. Basic Input Field
+
+The `Input` component can be used as a basic input field for gathering user input.
+
+<Canvas of={InputStories.Default} />
+
+### 2. Primary Input Field
+
+Use the `primary` prop to indicate that the input field is of primary importance or focus.
+
+<Canvas of={InputStories.Primary} />
+
+### 3. Error Variant Input Field
+
+When there is an error in the input, apply the `error` prop to visually indicate the error state.
+
+<Canvas of={InputStories.ErrorVariant} />
+
+### 4. Disabled Input Field
+
+Disable the input field by setting the `disabled` prop to `true`.
+
+<Canvas of={InputStories.Disabled} />
+
+### 5. Input Field with Icon
+
+Enhance the input field by adding an icon using the `icon` prop.
+
+<Canvas of={InputStories.WithIcon} />
+
+## Examples
+
+These examples demonstrate different use cases and configurations of the `Input` component, allowing for a versatile and user-friendly input experience.
+
+```tsx
+import { Input } from 'your-library';
+import { FaAddressCard } from 'react-icons/fa';
+
+// Basic input field
+<Input placeholder="Enter your name" />
+
+// Input field with primary focus
+<Input placeholder="Enter your email" primary />
+
+// Input field with error state
+<Input placeholder="Enter your password" error />
+
+// Disabled input field
+<Input placeholder="Enter your phone number" disabled />
+
+// Input field with icon
+<Input placeholder="Enter your address" icon={<FaAddressCard />} />
+```
+
+## Props
+
+The `Input` component accepts the following props:
+
+- `type`: Specifies the type of input field. Defaults to `'text'`.
+- `placeholder`: Placeholder text for the input field.
+- `value`: Current value of the input field.
+- `onChange`: Function to handle changes in the input field.
+- `icon`: Icon component to be displayed inside the input field.
+- `button`: Button component to be displayed inside the input field.
+- `label`: Label text for the input field.
+- `feedback`: Feedback message to be displayed below the input field.
+- `disabled`: Specifies whether the input field is disabled.
+- `error`: Specifies whether there is an error in the input field.
+- `primary`: Specifies whether the input field is of primary importance.
+- `className`: Additional CSS class(es) to apply to the input field.

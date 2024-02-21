@@ -4,11 +4,12 @@ import React from 'react';
 import { FaAddressCard } from 'react-icons/fa';
 import Input from './Input';
 import { MinifyUIThemeProvider } from '../Theme';
+import { Column } from '../Layout';
 
 const meta: Meta = {
   title: 'Components/Input',
   component: Input,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -72,6 +73,23 @@ export const WithIcon: Story = {
   render: (args) => (
     <MinifyUIThemeProvider>
       <Input {...args} />
+    </MinifyUIThemeProvider>
+  ),
+};
+
+export const AllVariants: Story = {
+  args: {
+    placeholder: 'placeholder',
+  },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Column>
+        <Input {...args} />
+        <Input primary {...args} />
+        <Input error {...args} />
+        <Input disabled {...args} />
+        <Input icon={<FaAddressCard />} {...args} />
+      </Column>
     </MinifyUIThemeProvider>
   ),
 };

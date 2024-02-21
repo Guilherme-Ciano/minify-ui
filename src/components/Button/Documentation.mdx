@@ -1,0 +1,75 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button Component Documentation
+
+The `Button` component is a versatile UI element designed to provide clickable actions within a React application. It offers various customization options such as specifying button type, size, disabled state, icons, and additional styling through CSS classes.
+
+## All Variants
+
+<Canvas of={ButtonStories.AllVariants} />
+
+## Use Cases
+
+### 1. Basic Button
+
+Use the basic button to trigger simple actions or navigations within your application. It doesn't include any special styling or icons.
+
+<Canvas of={ButtonStories.Default} />
+
+### 2. Primary Button
+
+The primary button emphasizes the main action in a set of buttons. It often comes with a prominent color or icon to draw attention.
+
+<Canvas of={ButtonStories.Primary} />
+
+### 3. Dashed Button
+
+Dashed buttons provide a distinct visual style with dashed borders. They can be used for secondary actions or to differentiate from primary buttons.
+
+<Canvas of={ButtonStories.Dashed} />
+
+### 4. Text Button
+
+Text buttons offer a minimalistic appearance by removing background colors and borders. They are useful for actions where a less intrusive design is desired.
+
+<Canvas of={ButtonStories.Text} />
+
+### 5. Shadow Button
+
+Shadow buttons add a shadow effect to create a sense of depth, making them stand out from the background.
+
+<Canvas of={ButtonStories.Shadow} />
+
+## Customization
+
+You can customize the appearance of the button using CSS classes or by passing additional styles directly to the `Button` component.
+
+```tsx
+// CSS classes example
+<Button className="custom-button" onClick={handleClick}>Custom Style</Button>
+
+// Inline styles example
+<Button style={{ backgroundColor: 'red', color: 'white' }} onClick={handleClick}>Custom Color</Button>
+```
+
+## Note
+
+Ensure that the `onClick` prop is always provided to handle user interactions appropriately. Additionally, make use of the `isDisabled` prop to prevent users from interacting with the button when necessary.
+
+## Props
+
+The `Button` component accepts the following props:
+
+- `type`: Specifies the type of button (`primary`, `default`, `text`, `dashed`, `shadow`). Defaults to `primary`.
+- `onClick`: Callback function invoked when the button is clicked.
+- `children`: JSX content of the button.
+- `id`: HTML id attribute for the button element.
+- `size`: Specifies the size of the button (`sm`, `md`, `lg`). Defaults to `sm`.
+- `isDisabled`: Disables the button if `true`. Defaults to `false`.
+- `icon`: JSX element representing an icon displayed before the button text.
+- `trailIcon`: JSX element representing an icon displayed after the button text.
+- `className`: Additional CSS class names for custom styling.
