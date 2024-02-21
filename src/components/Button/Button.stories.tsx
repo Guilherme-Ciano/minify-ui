@@ -1,14 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import React from 'react';
-import { FaSave } from 'react-icons/fa';
+import { FaSave, FaSearch } from 'react-icons/fa';
 import Button from './Button';
 import { MinifyUIThemeProvider } from '../Theme';
+import { Column, Row } from '../Layout';
+import Terminal from '../Terminal';
 
 const meta = {
   title: 'Components/Button',
   component: Button,
-  tags: ['autodocs'],
+  // tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
@@ -16,6 +18,8 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+const handleClick = () => {};
 
 export const Default: Story = {
   args: {
@@ -32,7 +36,6 @@ export const Default: Story = {
 
 export const Primary: Story = {
   args: {
-    icon: <FaSave />,
     type: 'primary',
     children: <span>Button</span>,
   },
@@ -69,13 +72,41 @@ export const Text: Story = {
 
 export const Shadow: Story = {
   args: {
-    trailIcon: <FaSave />,
     type: 'shadow',
     children: <span>Button</span>,
   },
   render: (args) => (
     <MinifyUIThemeProvider>
       <Button {...args}></Button>
+    </MinifyUIThemeProvider>
+  ),
+};
+
+export const AllVariants: Story = {
+  args: {
+    type: 'shadow',
+    children: <span>Button</span>,
+  },
+  name: 'All Buttons',
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      <Row>
+        <Button type="primary" onClick={handleClick}>
+          <span>Button</span>
+        </Button>
+        <Button type="default" onClick={handleClick}>
+          <span>Button</span>
+        </Button>
+        <Button type="shadow" onClick={handleClick}>
+          <span>Button</span>
+        </Button>
+        <Button type="dashed" onClick={handleClick}>
+          <span>Button</span>
+        </Button>
+        <Button type="text" onClick={handleClick}>
+          <span>Button</span>
+        </Button>
+      </Row>
     </MinifyUIThemeProvider>
   ),
 };

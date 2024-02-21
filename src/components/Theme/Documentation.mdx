@@ -1,0 +1,142 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ThemeStories from './Theme.stories';
+
+<Meta of={ThemeStories} />
+
+# MinifyUIThemeProvider Component Documentation
+
+The `MinifyUIThemeProvider` component serves as a theme provider for styled-components within a React application. It allows you to set global styles and theme variables to maintain consistency and easily manage the visual aspects of your UI components.
+
+> ### ⚠️ Warning:
+>
+> The MinifyUIThemeProvider should wrap around your entire `<App />` component for better results. Without it, other components present in the MinifyUI library may not function properly.
+
+## Use Cases
+
+### 1. Setting Global Theme Variables
+
+Use the `MinifyUIThemeProvider` to define global theme variables such as colors, fonts, spacing, etc. These variables can then be accessed and utilized by styled-components throughout your application.
+
+```tsx
+// Import the MinifyUIThemeProvider component
+import { MinifyUIThemeProvider } from 'minify-ui';
+
+// Provide the global theme variables to the MinifyUIThemeProvider
+<MinifyUIThemeProvider theme={globalVariables}>
+  <App />
+</MinifyUIThemeProvider>;
+```
+
+### 2. Theming Components
+
+Wrap your UI components with the `MinifyUIThemeProvider` to apply the defined theme variables and maintain consistent styling across your application.
+
+```tsx
+// Wrap components with the MinifyUIThemeProvider
+<MinifyUIThemeProvider theme={globalVariables}>
+  <Button onClick={handleClick} type="primary">
+    <span>Button</span>
+  </Button>
+</MinifyUIThemeProvider>
+```
+
+## Examples
+
+```tsx
+// Import the MinifyUIThemeProvider component
+import { MinifyUIThemeProvider, MinifyUIThemeProps, Button } from 'minify-ui';
+import { Button } from './Button'; // Example component
+
+// Define global theme variables
+const globalVariables: MinifyUIThemeProps = {
+  colorVariables: {
+    colorWhite: '#fafafa',
+    colorBlack: '#001524',
+
+    colorPrimary: '#168aad',
+    colorSecondary: '#1e6091',
+
+    colorError: '#e5383b',
+    colorSuccess: '#76c893',
+    colorWarning: '#ffe45e',
+  },
+};
+
+// Wrap the Button component with the MinifyUIThemeProvider and provide the global theme variables
+<MinifyUIThemeProvider theme={globalVariables}>
+  <Button onClick={handleClick} type="primary">
+    <span>Button</span>
+  </Button>
+</MinifyUIThemeProvider>;
+```
+
+## Note
+
+Ensure that the `MinifyUIThemeProvider` component is rendered at the root of your application or at a high enough level to provide the theme context to all styled-components within your application.
+
+## Props
+
+The `MinifyUIThemeProvider` component accepts the following props:
+
+- `theme`: An object containing global theme variables to be applied to styled-components. Defaults to `MinifyUITheme`.
+- `children`: JSX content wrapped by the theme provider.
+
+## Global Variables Props
+
+The `MinifyUIThemeProvider` component accepts themes, but they need to follow certain patterns and match specific types. You don't need to actually write all objects, only the ones that you want to overwrite.
+
+You can find all the acceptable types here:
+
+### Font Variables
+
+- `fontFamilySansSerif`: string - The font family for sans-serif text.
+- `fontFamilySerif`: string - The font family for serif text.
+- `fontSizeBase`: string - The base font size for the application.
+- `fontColor`: string - The default font color.
+- `fontWeightLight`: number - The font weight for light text.
+- `fontWeightNormal`: number - The font weight for normal text.
+- `fontWeightLightBold`: number - The font weight for light bold text.
+- `fontWeightBold`: number - The font weight for bold text.
+- `fontWeightBolder`: number - The font weight for bolder text.
+
+### Color Variables
+
+- `colorWhite`: string - The color code for white.
+- `colorBlack`: string - The color code for black.
+- `colorPrimary`: string - The primary color used for important elements.
+- `colorSecondary`: string - The secondary color used for less prominent elements.
+- `colorError`: string - The color used to indicate errors.
+- `colorSuccess`: string - The color used to indicate success.
+- `colorWarning`: string - The color used to indicate warnings.
+
+### Border Variables
+
+- `borderRadiusSmall`: string - The border radius for small elements.
+- `borderRadiusMedium`: string - The border radius for medium-sized elements.
+- `borderRadiusLarge`: string - The border radius for large elements.
+- `borderWidth`: string - The width of the border.
+- `borderStyle`: string - The style of the border.
+
+### Spacing Variables
+
+- `spacingSmall`: string - The spacing for small elements.
+- `spacingMedium`: string - The spacing for medium-sized elements.
+- `spacingLarge`: string - The spacing for large elements.
+
+### Size Variables
+
+- `widthSmall`: string - The width for small elements.
+- `widthMedium`: string - The width for medium-sized elements.
+- `widthLarge`: string - The width for large elements.
+- `widthFullWidthView`: string - The width for full-width elements.
+- `heightSmall`: string - The height for small elements.
+- `heightMedium`: string - The height for medium-sized elements.
+- `heightLarge`: string - The height for large elements.
+- `heightFullHeightView`: string - The height for full-height elements.
+
+### Opacity Variables
+
+- `opacityLight`: number - The opacity for light elements.
+- `opacityMedium`: number - The opacity for medium elements.
+- `opacityHeavy`: number - The opacity for heavy elements.
