@@ -1,65 +1,63 @@
-interface FontVariables {
-  fontFamilySansSerif: string;
-  fontFamilySerif: string;
-  fontSizeBase: string;
-  fontColor: string;
+interface FontSizesDefinition {
+  Heading1: string;
+  Heading2: string;
+  Heading3: string;
+  Normal: string;
+  Small: string;
+}
 
-  fontWeightLight: number;
-  fontWeightNormal: number;
-  fontWeightLightBold: number;
-  fontWeightBold: number;
-  fontWeightBolder: number;
+interface WeightDefinition {
+  Light: number;
+  Normal: number;
+  LightBold: number;
+  Bold: number;
+  Bolder: number;
+}
+
+interface ColorDefinition {
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+}
+
+interface ColorEventDefinition {
+  Success: string;
+  Warning: string;
+  Danger: {
+    500: string;
+    600: string;
+    700: string;
+  };
+}
+
+interface SizeDefinition {
+  sxsm: string;
+  xsm: string;
+  sm: string;
+  md: string;
+  lg: string;
+  xl: string;
+  sxl: string;
+}
+
+interface FontVariables {
+  Family: string;
+  Sizes: FontSizesDefinition;
+  Weight: WeightDefinition;
 }
 
 interface ColorVariables {
-  colorWhite: string;
-  colorBlack: string;
-
-  colorPrimary: string;
-  colorSecondary: string;
-
-  colorError: string;
-  colorSuccess: string;
-  colorWarning: string;
-}
-
-interface BorderVariables {
-  borderRadiusSmall: string;
-  borderRadiusMedium: string;
-  borderRadiusLarge: string;
-  borderWidth: string;
-  borderStyle: string;
-}
-
-interface SpacingVariables {
-  spacingSmall: string;
-  spacingMedium: string;
-  spacingLarge: string;
-}
-
-interface SizeVariables {
-  widthSmall: string;
-  widthMedium: string;
-  widthLarge: string;
-  widthFullWidthView: string;
-
-  heightSmall: string;
-  heightMedium: string;
-  heightLarge: string;
-  heightFullHeightView: string;
-}
-
-interface OpacityVariables {
-  opacityLight: number;
-  opacityMedium: number;
-  opacityHeavy: number;
+  Primary: ColorDefinition;
+  Secondary: ColorDefinition;
+  Events: ColorEventDefinition;
+  Neutral: ColorDefinition;
+  BW: ColorDefinition;
 }
 
 export interface GlobalVariablesProps {
-  fontVariables: FontVariables;
-  colorVariables: ColorVariables;
-  borderVariables: BorderVariables;
-  spacingVariables: SpacingVariables;
-  sizeVariables: SizeVariables;
-  opacityVariables: OpacityVariables;
+  Font: FontVariables;
+  Colors: ColorVariables;
+  Size: SizeDefinition;
 }
