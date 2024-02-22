@@ -3,26 +3,33 @@ import React from 'react';
 import { MinimalButton } from './styles';
 
 interface ButtonProps {
-  type: 'primary' | 'default' | 'text' | 'dashed' | 'shadow';
+  type?: 'Default' | 'Base' | 'Primary' | 'Secondary' | 'Danger' | 'Text';
+  size?: 'sm' | 'md' | 'lg';
+  hover?: boolean;
+  shadow?: boolean;
+  disabled?: boolean;
+
   onClick: () => void;
   children: JSX.Element;
 
   id?: string;
-  size?: 'sm' | 'md' | 'lg';
-  isDisabled?: boolean;
   icon?: JSX.Element;
   trailIcon?: JSX.Element;
   className?: string;
 }
 
 export default function Button({
-  id,
-  icon,
-  type = 'primary',
+  type = 'Default',
   size = 'sm',
-  isDisabled = false,
+  hover = false,
+  shadow = false,
+  disabled = false,
+
   onClick,
   children,
+
+  id,
+  icon,
   trailIcon,
   className,
 }: ButtonProps) {
@@ -35,13 +42,15 @@ export default function Button({
       className={className}
       $type={type}
       $size={size}
-      $isDisabled={isDisabled}
+      $hover={!disabled ? hover : false}
+      $shadow={!disabled ? shadow : false}
+      $disabled={disabled}
       onClick={onClick}
-      disabled={isDisabled}
+      disabled={disabled}
     >
-      {hasIcon && icon}
-      {children}
       {hasTrailIcon && trailIcon}
+      {children}
+      {hasIcon && icon}
     </MinimalButton>
   );
 }

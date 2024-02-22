@@ -20,7 +20,7 @@ export const Default: Story = {
   args: {
     theme: globalVariables,
     children: (
-      <Button onClick={() => {}} type="primary">
+      <Button onClick={() => {}} type="Primary">
         <span>Button</span>
       </Button>
     ),

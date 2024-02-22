@@ -6,70 +6,66 @@ import * as ButtonStories from './Button.stories';
 
 # Button Component Documentation
 
-The `Button` component is a versatile UI element designed to provide clickable actions within a React application. It offers various customization options such as specifying button type, size, disabled state, icons, and additional styling through CSS classes.
-
-## All Variants
+The `Button` component provides a customizable button element for user interaction. It supports various visual variants such as default, primary, secondary, danger, base, and text buttons, along with additional features like size, hover effect, shadow, and disabled state.
 
 <Canvas of={ButtonStories.AllVariants} />
 
 ## Use Cases
 
-### 1. Basic Button
+### 1. Default Button
 
-Use the basic button to trigger simple actions or navigations within your application. It doesn't include any special styling or icons.
+Use the default button for general actions.
 
 <Canvas of={ButtonStories.Default} />
 
 ### 2. Primary Button
 
-The primary button emphasizes the main action in a set of buttons. It often comes with a prominent color or icon to draw attention.
+Use the primary button for primary actions or emphasis.
 
 <Canvas of={ButtonStories.Primary} />
 
-### 3. Dashed Button
+### 3. Secondary Button
 
-Dashed buttons provide a distinct visual style with dashed borders. They can be used for secondary actions or to differentiate from primary buttons.
+Use the secondary button for secondary actions or alternative options.
 
-<Canvas of={ButtonStories.Dashed} />
+<Canvas of={ButtonStories.Secondary} />
 
-### 4. Text Button
+### 4. Base Button
 
-Text buttons offer a minimalistic appearance by removing background colors and borders. They are useful for actions where a less intrusive design is desired.
+Use the base button for basic interactions or neutral actions.
+
+<Canvas of={ButtonStories.Base} />
+
+### 5. Danger Button
+
+Use the danger button to indicate potentially dangerous or critical actions.
+
+<Canvas of={ButtonStories.Danger} />
+
+### 6. Text Button
+
+Use the text button for minimalistic or subtle interactions.
 
 <Canvas of={ButtonStories.Text} />
 
-### 5. Shadow Button
+## Examples
 
-Shadow buttons add a shadow effect to create a sense of depth, making them stand out from the background.
+These examples showcase different use cases and configurations of the `Button` component, providing a versatile and user-friendly button element for various application needs.
 
-<Canvas of={ButtonStories.Shadow} />
-
-## Customization
-
-You can customize the appearance of the button using CSS classes or by passing additional styles directly to the `Button` component.
-
-```tsx
-// CSS classes example
-<Button className="custom-button" onClick={handleClick}>Custom Style</Button>
-
-// Inline styles example
-<Button style={{ backgroundColor: 'red', color: 'white' }} onClick={handleClick}>Custom Color</Button>
-```
-
-## Note
-
-Ensure that the `onClick` prop is always provided to handle user interactions appropriately. Additionally, make use of the `isDisabled` prop to prevent users from interacting with the button when necessary.
+<Canvas of={ButtonStories.Showcase} />
 
 ## Props
 
 The `Button` component accepts the following props:
 
-- `type`: Specifies the type of button (`primary`, `default`, `text`, `dashed`, `shadow`). Defaults to `primary`.
-- `onClick`: Callback function invoked when the button is clicked.
-- `children`: JSX content of the button.
-- `id`: HTML id attribute for the button element.
-- `size`: Specifies the size of the button (`sm`, `md`, `lg`). Defaults to `sm`.
-- `isDisabled`: Disables the button if `true`. Defaults to `false`.
-- `icon`: JSX element representing an icon displayed before the button text.
-- `trailIcon`: JSX element representing an icon displayed after the button text.
-- `className`: Additional CSS class names for custom styling.
+- `type`: Specifies the visual variant of the button. Default is `'Default'`.
+- `size`: Specifies the size of the button. Default is `'sm'`.
+- `hover`: Specifies whether the button should have a hover effect. Default is `false`.
+- `shadow`: Specifies whether the button should have a shadow effect. Default is `false`.
+- `disabled`: Specifies whether the button is disabled. Default is `false`.
+- `onClick`: Function to handle button click events.
+- `children`: JSX content to be displayed inside the button.
+- `id`: Specifies the id attribute of the button.
+- `icon`: Icon component to be displayed inside the button.
+- `trailIcon`: Icon component to be displayed after the button content.
+- `className`: Additional CSS class(es) to apply to the button.
