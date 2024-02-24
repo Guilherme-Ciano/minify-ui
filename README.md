@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<img alt="Codecov" src="https://img.shields.io/npm/dw/minify-ui?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/npm/dm/minify-ui?style=for-the-badge&labelColor=000000">
 <img alt="Codecov" src="https://img.shields.io/github/commit-activity/w/Guilherme-Ciano/minify-ui?style=for-the-badge&labelColor=000000">
 <img alt="CircleCI" src="https://img.shields.io/github/actions/workflow/status/Guilherme-Ciano/minify-ui/publish.yml?style=for-the-badge&labelColor=000000">
 <img alt="npm (scoped)" src="https://img.shields.io/npm/v/minify-ui?style=for-the-badge&labelColor=000000">
