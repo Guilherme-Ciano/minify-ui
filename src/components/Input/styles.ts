@@ -1,62 +1,182 @@
 import styled, { css } from 'styled-components';
 
-const BaseInput = css`
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 2px solid ${(props) => props.theme.colorVariables.shadowColor};
-  font-size: 1rem;
+interface InputProps {
+  $size?: 'sm' | 'md' | 'lg';
+  $leftIcon?: boolean;
+  $rightIcon?: boolean;
+  $disabled?: boolean;
+  $labelPosition?: 'outside' | 'inside';
+  $isOnFocus?: boolean;
+  $hasError?: boolean;
+  $hasSuccess?: boolean;
+}
+
+const handleFontSize = (size: 'sm' | 'md' | 'lg') => {
+  const fontSize = {
+    sm: css`
+      ${({ theme }) => theme.Size.sxsm}
+    `,
+    md: css`
+      ${({ theme }) => theme.Size.xsm}
+    `,
+    lg: css`
+      ${({ theme }) => theme.Size.sm}
+    `,
+  };
+
+  return fontSize[size];
+};
+
+const handleInputSize = (
+  size: 'sm' | 'md' | 'lg',
+  labelPosition: 'outside' | 'inside'
+) => {
+  const paddingSizes = {
+    outside: {
+      sm: css`
+        padding: 0.3rem ${({ theme }) => theme.Size.sxsm};
+      `,
+      md: css`
+        padding: 0.3rem ${({ theme }) => theme.Size.sxsm};
+      `,
+      lg: css`
+        padding: 0.3rem ${({ theme }) => theme.Size.xsm};
+      `,
+    },
+    inside: {
+      sm: css`
+        padding: 0;
+      `,
+      md: css`
+        padding: 0.3rem ${({ theme }) => theme.Size.sxsm};
+      `,
+      lg: css`
+        padding: 0.3rem ${({ theme }) => theme.Size.sm};
+      `,
+    },
+  };
+
+  return paddingSizes[labelPosition][size];
+};
+
+const handleInputDisabled = (disabled: boolean) => {
+  if (disabled)
+    return css`
+      opacity: 0.5;
+      cursor: not-allowed;
+    `;
+  return;
+};
+
+export const MainWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const InputWrapper = styled.div<InputProps>`
+  display: flex;
+  flex-direction: column;
+  border: 2px solid ${({ theme }) => theme.Colors.BW['400']};
+  border-radius: ${({ theme }) => theme.Size.sxsm};
   transition: border-color 0.3s ease;
+  margin-top: calc((${({ theme }) => theme.Size.sxsm}) - 5px);
+  cursor: text;
+
+  ${({ $size = 'md', $labelPosition = 'outside' }) =>
+    handleInputSize($size, $labelPosition)}
+  ${({ $disabled = false }) => handleInputDisabled($disabled)}
+
+  ${({ $hasSuccess }) =>
+    $hasSuccess &&
+    css`
+      border-color: ${({ theme }) => theme.Colors.Secondary['500']};
+    `}
+
+  ${({ $isOnFocus }) =>
+    $isOnFocus &&
+    css`
+      border-color: ${({ theme }) => theme.Colors.Primary['400']};
+    `}
+
+  ${({ $hasError }) =>
+    $hasError &&
+    css`
+      border-color: ${({ theme }) => theme.Colors.Events.Danger['500']};
+    `}
+`;
+
+export const InputContainer = styled.div`
+  height: 100%;
+  display: flex;
+  gap: ${({ theme }) => theme.Size.sxsm};
+  align-items: center;
+`;
+
+export const InputLabelWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: calc(${({ theme }) => theme.Size.sxsm} / 2);
+`;
+
+export const Input = styled.input<InputProps>`
+  border: none;
+  padding: 0.1rem;
+
+  font-size: ${({ $size = 'md' }) => handleFontSize($size)};
+  font-family: ${({ theme }) => theme.Font.Family};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.Colors.BW['500']};
+  }
 
   &:focus {
     outline: none;
-    border-color: ${(props) => props.theme.colorVariables.colorPrimary};
+    border: none;
   }
 `;
 
-export const DefaultInput = styled.input`
-  ${BaseInput}
-`;
-
-export const PrimaryInput = styled.input`
-  ${BaseInput}
-  border-color: ${(props) => props.theme.colorVariables.shadowColor};
-`;
-
-export const ErrorInput = styled.input`
-  ${BaseInput}
-  border-color: ${(props) => props.theme.colorVariables.colorError};
-`;
-
-export const DisabledInput = styled.input`
-  ${BaseInput}
-  cursor: not-allowed;
-`;
-
-export const InputWithIcon = styled.div`
-  position: relative;
+export const Icon = styled.div<InputProps>`
   display: flex;
+  justify-content: center;
   align-items: center;
 
-  svg {
-    position: absolute;
-    left: 95%;
-    bottom: 0.6rem;
-    color: ${(props) => props.theme.colorVariables.shadowColor};
+  & svg {
+    font-size: calc(${({ $size }) => handleFontSize($size ?? 'md')} * 1.5);
+    fill: ${({ theme }) => theme.Colors.BW['400']};
+
+    ${({ $hasSuccess }) =>
+      $hasSuccess &&
+      css`
+        fill: ${({ theme }) => theme.Colors.Secondary['500']};
+      `}
+
+    ${({ $isOnFocus }) =>
+      $isOnFocus &&
+      css`
+        fill: ${({ theme }) => theme.Colors.Primary['400']};
+      `}
+
+  ${({ $hasError }) =>
+      $hasError &&
+      css`
+        fill: ${({ theme }) => theme.Colors.Events.Danger['500']};
+      `}
   }
 `;
 
-export const InputGroup = styled.div`
-  display: flex;
-  gap: 0.5rem;
+export const Label = styled.label<InputProps>`
+  font-family: ${({ theme }) => theme.Font.Family};
+  font-size: calc(${({ $size }) => handleFontSize($size ?? 'md')});
 `;
 
-export const InputLabel = styled.label`
-  font-size: 0.875rem;
-  margin-bottom: 0.25rem;
-`;
+export const Helper = styled.label<InputProps>`
+  font-family: ${({ theme }) => theme.Font.Family};
+  font-size: calc(${({ $size }) => handleFontSize($size ?? 'md')});
 
-export const InputFeedback = styled.div`
-  font-size: 0.75rem;
-  margin-top: 0.25rem;
+  ${({ $hasError }) =>
+    $hasError &&
+    css`
+      color: ${({ theme }) => theme.Colors.Events.Danger['500']};
+    `}
 `;

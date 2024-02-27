@@ -1,86 +1,113 @@
-import React from 'react';
-
+import React, { ChangeEventHandler, useState } from 'react';
 import {
-  DefaultInput,
-  DisabledInput,
-  ErrorInput,
-  InputFeedback,
-  InputLabel,
-  InputWithIcon,
-  PrimaryInput,
+  InputWrapper,
+  InputContainer,
+  Helper,
+  Label,
+  Icon,
+  Input,
+  InputLabelWrapper,
+  MainWrapper,
 } from './styles';
 
-interface InputProps {
-  type?:
-    | 'button'
-    | 'checkbox'
-    | 'color'
-    | 'date'
-    | 'datetime-local'
-    | 'email'
-    | 'file'
-    | 'hidden'
-    | 'image'
-    | 'month'
-    | 'number'
-    | 'password'
-    | 'radio'
-    | 'range'
-    | 'reset'
-    | 'search'
-    | 'submit'
-    | 'tel'
-    | 'text'
-    | 'time'
-    | 'url'
-    | 'week';
-  placeholder?: string;
-  value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  icon?: React.ReactNode;
-  button?: React.ReactNode;
+interface InputTextProps {
+  name: string;
+  size?: 'sm' | 'md' | 'lg';
   label?: string;
-  feedback?: string;
+  placeholder?: string;
+  labelPosition?: 'outside' | 'inside';
+  helper?: string;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
   disabled?: boolean;
-  error?: boolean;
-  primary?: boolean;
-  className?: string;
+  errors?: string;
+  success?: boolean;
+
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  type?: 'number' | 'email' | 'password' | 'search' | 'text' | 'date';
 }
 
-export default function Input({
-  type = 'text',
-  placeholder,
-  value,
-  onChange,
-  icon,
+export default function InputText({
+  name,
   label,
-  feedback,
-  disabled,
-  error,
-  primary,
-  className,
-}: InputProps) {
-  let InputComponent = DefaultInput;
-  if (primary) {
-    InputComponent = PrimaryInput;
-  } else if (error) {
-    InputComponent = ErrorInput;
-  } else if (disabled) {
-    InputComponent = DisabledInput;
-  }
+  value,
+  helper,
+  leftIcon,
+  rightIcon,
+  onChange,
+  size = 'md',
+  type = 'text',
+  success = false,
+  disabled = false,
+  errors = undefined,
+  labelPosition = 'outside',
+  placeholder = 'Input placeholder',
+}: InputTextProps) {
+  const haveErrors = errors !== undefined;
+  const haveLeftIcon = leftIcon !== undefined;
+  const haveRightIcon = rightIcon !== undefined;
+
+  const [isFocused, setIsFocused] = useState(false);
+  const [isWithError, setIsWithError] = useState(haveErrors);
 
   return (
-    <div className={className}>
-      {label && <InputLabel>{label}</InputLabel>}
-      <InputComponent
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        disabled={disabled}
-      />
-      {icon && <InputWithIcon>{icon}</InputWithIcon>}
-      {feedback && <InputFeedback>{feedback}</InputFeedback>}
-    </div>
+    <MainWrapper>
+      {labelPosition === 'outside' && <Label $size={size}>{label}</Label>}
+      <InputWrapper
+        $size={size}
+        $disabled={disabled}
+        $leftIcon={haveLeftIcon}
+        $rightIcon={haveRightIcon}
+        $labelPosition={labelPosition}
+        $isOnFocus={isFocused}
+        $hasError={isWithError}
+        $hasSuccess={success}
+      >
+        <InputContainer>
+          {haveLeftIcon && (
+            <Icon
+              $size={size}
+              $isOnFocus={isFocused}
+              $hasError={isWithError}
+              $hasSuccess={success}
+            >
+              {leftIcon}
+            </Icon>
+          )}
+          <InputLabelWrapper>
+            {labelPosition === 'inside' && <Label $size={size}>{label}</Label>}
+            <Input
+              name={name}
+              value={value}
+              placeholder={placeholder}
+              $size={size}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              onError={() => setIsWithError(true)}
+              onChange={onChange}
+              type={type}
+              disabled={disabled}
+            />
+          </InputLabelWrapper>
+          {haveRightIcon && (
+            <Icon
+              $size={size}
+              $isOnFocus={isFocused}
+              $hasError={isWithError}
+              $hasSuccess={success}
+            >
+              {rightIcon}
+            </Icon>
+          )}
+        </InputContainer>
+      </InputWrapper>
+      {helper && <Helper $size={size}>{helper}</Helper>}
+      {errors && (
+        <Helper $size={size} $hasError={isWithError}>
+          {errors}
+        </Helper>
+      )}
+    </MainWrapper>
   );
 }

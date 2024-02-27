@@ -1,0 +1,53 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as CardStories from './Card.stories';
+
+<Meta of={CardStories} />
+
+# Card Component Documentation
+
+The `Card` component provides a container with customizable styles such as shadow level, padding, and border radius. It is commonly used to group related content together and provide visual separation within a user interface.
+
+## Use Cases
+
+### 1. Default Card
+
+Use the default card to display content with default styling.
+
+<Canvas of={CardStories.Default} />
+
+### 2. Customized Card
+
+Customize the card with specific shadow level, padding, and border radius.
+
+<Canvas of={CardStories.Customized} />
+
+## Examples
+
+These examples demonstrate different use cases and configurations of the `Card` component, allowing for versatile and visually appealing card designs within the application.
+
+```tsx
+import { Card } from 'minify-ui';
+import { H1, Paragraph } from 'minify-ui';
+
+// Default card
+<Card>
+  <H1>Default Card</H1>
+  <Paragraph>This is a default card.</Paragraph>
+</Card>
+
+// Customized card
+<Card shadowLevel={2} padding={20} borderRadius={8}>
+  <H1>Customized Card</H1>
+  <Paragraph>This is a customized card with shadow, padding, and border radius.</Paragraph>
+</Card>
+```
+
+## Props
+
+The `Card` component accepts the following props:
+
+- `shadowLevel`: Specifies the depth of the shadow effect. Higher values indicate stronger shadows. Defaults to `0`.
+- `padding`: Specifies the padding inside the card container. Defaults to `0`.
+- `borderRadius`: Specifies the border radius of the card container. Defaults to `0`.
+- `children`: JSX content to be rendered inside the card.

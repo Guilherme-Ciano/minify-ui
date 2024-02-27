@@ -156,14 +156,19 @@ const getBackgroundStyles = ({ variation }: HoverVariations) => {
 
       case 'Base':
         return css<ButtonProps>`
-          color: ${({ theme }) => theme.Colors.Neutral['700']};
+          color: ${({ theme }) => theme.Colors.BW['700']};
           background-color: ${({ theme }) => theme.Colors.Neutral['300']};
         `;
 
       case 'Text':
         return css<ButtonProps>`
-          color: ${({ theme }) => theme.Colors.Neutral['700']};
+          color: ${({ theme }) => theme.Colors.BW['700']};
           background: none;
+        `;
+
+      case 'Primary':
+        return css<ButtonProps>`
+          background-color: ${({ theme }) => theme.Colors.Primary['400']};
         `;
 
       default:

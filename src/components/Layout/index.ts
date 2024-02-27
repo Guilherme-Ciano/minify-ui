@@ -1,1 +1,1 @@
-export { BasePadding, Column, PageWrapper, Row } from "./Layout";
+export { Column, PageWrapper, Row, Center } from './Layout';

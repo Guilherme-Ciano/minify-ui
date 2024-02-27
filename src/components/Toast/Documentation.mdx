@@ -1,0 +1,63 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ToastStories from './Toast.stories';
+
+<Meta of={ToastStories} />
+
+# Toast Component
+
+The `Toast` component provides a way to display temporary messages or notifications to users in your React application. It supports different types of toasts such as information, success, warning, error, and custom types.
+
+## Installation
+
+To use the `Toast` component, you need to install it in your React project along with its dependencies:
+
+```bash
+npm install react-icons styled-components
+```
+
+## Usage
+
+1. **Import `ToastProvider` Component**:
+
+Import the `ToastProvider` component into your Main React component file:
+
+```javascript
+import React from 'react';
+import { MinifyUIThemeProvider, ToastProvider } from 'minify-ui';
+```
+
+2. **Wrap Components with `ToastProvider`**:
+
+Wrap your components with the `ToastProvider` to enable toast notifications:
+
+```javascript
+<MinifyUIThemeProvider>
+  <ToastProvider>{/* Your components here */}</ToastProvider>
+</MinifyUIThemeProvider>
+```
+
+3. **Display Toasts**:
+
+Inside your components, you can trigger toast notifications using the `addToast` function provided by the `useToast` hook:
+
+```javascript
+import { useToast } from 'minify-ui';
+
+const { addToast } = useToast();
+
+addToast({ message: 'This is an information toast', type: 'info' });
+```
+
+## Props
+
+### `ToastProvider`
+
+- `position`: String indicating the position where the toast notifications should appear. Default is `'topRight'`.
+
+### `Toast`
+
+- `message`: String representing the message content of the toast.
+- `type`: String representing the type of toast. Possible values are `'info'`, `'success'`, `'warning'`, `'error'`, `'default'`, `'black'`.
+- `seconds`: Number representing the duration in seconds for which the toast should be visible. Default is `3`.
+- `onClose`: Function to be called when the toast is closed.

@@ -1,1 +1,1 @@
-export { A, H1, H2, H3, P } from "./Typography";
+export { A, H1, H2, H3, P, Small } from './Typography';

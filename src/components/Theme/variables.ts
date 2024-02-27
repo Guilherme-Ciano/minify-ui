@@ -57,7 +57,7 @@ export const globalVariables: GlobalVariablesProps = {
     BW: {
       '300': '#FAFAF9',
       '400': '#E7E5E4',
-      '500': '#3F3F46',
+      '500': '#A5A5A5',
       '600': '#18181B',
       '700': '#09090B',
     },
@@ -70,6 +70,6 @@ export const globalVariables: GlobalVariablesProps = {
     md: '1.5rem',
     lg: '2rem',
     xl: '4rem',
-    sxl: '4rem',
+    sxl: '6rem',
   },
 };
