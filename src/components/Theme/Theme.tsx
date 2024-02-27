@@ -5,7 +5,7 @@ import { globalVariables } from './variables';
 
 export interface MinifyUIThemeProviderProps {
   theme?: GlobalVariablesProps;
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 }
 
 export function MinifyUIThemeProvider({

@@ -1,0 +1,106 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as LayoutStories from './Layout.stories';
+
+<Meta of={LayoutStories} />
+
+# Styled Components for Layout
+
+The provided styled components (`PageWrapper`, `Row`, `Column`, `Center`) offer a convenient way to create structured layouts in React applications using styled-components. These components enable developers to define the layout structure, such as rows, columns, and centered content, with ease.
+
+## Usage
+
+### `PageWrapper`
+
+The `PageWrapper` component is used to wrap the entire page content. It sets the height to 100% of the viewport (`vh`) and arranges its children in a column layout with a specified gap between them.
+
+Example:
+
+```javascript
+import React from 'react';
+import { PageWrapper } from './styles';
+
+const MyPage = () => <PageWrapper>{/* Page content goes here */}</PageWrapper>;
+
+export default MyPage;
+```
+
+### `Row`
+
+The `Row` component is used to create a horizontal row layout. It arranges its children in a row format with a specified gap between them.
+
+Example:
+
+```javascript
+import React from 'react';
+import { Row } from './styles';
+
+const MyRowLayout = () => <Row>{/* Row content goes here */}</Row>;
+
+export default MyRowLayout;
+```
+
+### `Column`
+
+The `Column` component is used to create a vertical column layout. It arranges its children in a column format with a specified gap between them.
+
+Example:
+
+```javascript
+import React from 'react';
+import { Column } from './styles';
+
+const MyColumnLayout = () => <Column>{/* Column content goes here */}</Column>;
+
+export default MyColumnLayout;
+```
+
+### `Center`
+
+The `Center` component is used to center its children both horizontally and vertically within its container. It arranges its children in a column format with justified content and aligned items set to center.
+
+Example:
+
+```javascript
+import React from 'react';
+import { Center } from './styles';
+
+const MyCenteredContent = () => (
+  <Center>{/* Centered content goes here */}</Center>
+);
+
+export default MyCenteredContent;
+```
+
+## Examples
+
+### Row and Column Layout
+
+```javascript
+import React from 'react';
+import { PageWrapper, Row, Column } from './styles';
+
+const MyPageLayout = () => (
+  <PageWrapper>
+    <Row>
+      <Column>{/* Content for the first column */}</Column>
+      <Column>{/* Content for the second column */}</Column>
+    </Row>
+  </PageWrapper>
+);
+
+export default MyPageLayout;
+```
+
+### Centered Content
+
+```javascript
+import React from 'react';
+import { Center } from './styles';
+
+const MyCenteredLayout = () => <Center>{/* Centered content */}</Center>;
+
+export default MyCenteredLayout;
+```
+
+These styled components provide a flexible and reusable way to create various layout structures in React applications. Developers can customize the styles according to their design requirements and use them to create visually appealing UIs.

@@ -1,124 +1,79 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
-interface HeadingProps {
-	$type?: "light" | "bold" | "bolder";
-	$italic?: boolean;
-	$underline?: boolean;
+export interface HeadingProps {
+  $type?: 'light' | 'lightBold' | 'normal' | 'bold' | 'bolder';
+  $italic?: boolean;
+  $underline?: boolean;
 }
 
-const BaseText = css`
+const TextWeights = {
+  light: css`
+    font-weight: ${({ theme }) => theme.Font.Weight.Light};
+  `,
+  normal: css`
+    font-weight: ${({ theme }) => theme.Font.Weight.Normal};
+  `,
+  lightBold: css`
+    font-weight: ${({ theme }) => theme.Font.Weight.LightBold};
+  `,
+  bold: css`
+    font-weight: ${({ theme }) => theme.Font.Weight.Bold};
+  `,
+  bolder: css`
+    font-weight: ${({ theme }) => theme.Font.Weight.Bolder};
+  `,
+};
+
+const handleTextWeight = (
+  weight: 'light' | 'lightBold' | 'normal' | 'bold' | 'bolder' = 'normal'
+) => TextWeights[weight];
+
+const BaseText = css<HeadingProps>`
   margin: 0;
   padding: 0;
 
-  color: var(--font-color);
-  font-family: var(--font-family-sans-serif);
-  font-size: var(--font-size-base);
+  color: ${({ theme }) => theme.Colors.BW['700']};
+  font-family: ${({ theme }) => theme.Font.Family};
+
+  ${({ $type }) => handleTextWeight($type)}
+  font-style: ${({ $italic }) => $italic && 'italic'};
+  text-decoration: ${({ $underline }) => $underline && 'underline'};
 `;
 
 export const Heading1 = styled.h1<HeadingProps>`
   ${BaseText}
 
-  font-family: var(--font-family-sans-serif);
-  font-size: calc(var(--font-size-base) * 2);
-  font-style: ${(props) => props.$italic && "italic"};
-  text-decoration: ${(props) => props.$underline && "underline"};
-  font-weight: ${(props) => {
-		switch (props.$type) {
-			case "light":
-				return "var(--font-weight-light)";
-			case "bold":
-				return "var(--font-weight-bold)";
-			case "bolder":
-				return "var(--font-weight-bolder)";
-			default:
-				return "var(--font-weight-normal)";
-		}
-	}};
+  font-size: ${({ theme }) => theme.Font.Sizes.Heading1};
 `;
 
 export const Heading2 = styled.h2<HeadingProps>`
   ${BaseText}
 
-  font-family: var(--font-family-sans-serif);
-  font-size: calc(var(--font-size-base) * 1.6);
-  font-style: ${(props) => props.$italic && "italic"};
-  text-decoration: ${(props) => props.$underline && "underline"};
-  font-weight: ${(props) => {
-		switch (props.$type) {
-			case "light":
-				return "var(--font-weight-light)";
-			case "bold":
-				return "var(--font-weight-bold)";
-			case "bolder":
-				return "var(--font-weight-bolder)";
-			default:
-				return "var(--font-weight-normal)";
-		}
-	}};
+  font-size: ${({ theme }) => theme.Font.Sizes.Heading2};
 `;
 
 export const Heading3 = styled.h3<HeadingProps>`
   ${BaseText}
 
-  font-family: var(--font-family-sans-serif);
-  font-size: calc(var(--font-size-base) * 1.2);
-  font-style: ${(props) => props.$italic && "italic"};
-  text-decoration: ${(props) => props.$underline && "underline"};
-  font-weight: ${(props) => {
-		switch (props.$type) {
-			case "light":
-				return "var(--font-weight-light)";
-			case "bold":
-				return "var(--font-weight-bold)";
-			case "bolder":
-				return "var(--font-weight-bolder)";
-			default:
-				return "var(--font-weight-normal)";
-		}
-	}};
+  font-size: ${({ theme }) => theme.Font.Sizes.Heading3};
 `;
 
 export const Paragraph = styled.p<HeadingProps>`
   ${BaseText}
 
-  font-family: var(--font-family-sans-serif);
-  font-size: calc(var(--font-size-base) * 0.8);
-  font-style: ${(props) => props.$italic && "italic"};
-  text-decoration: ${(props) => props.$underline && "underline"};
-  font-weight: ${(props) => {
-		switch (props.$type) {
-			case "light":
-				return "var(--font-weight-light)";
-			case "bold":
-				return "var(--font-weight-bold)";
-			case "bolder":
-				return "var(--font-weight-bolder)";
-			default:
-				return "var(--font-weight-normal)";
-		}
-	}};
+  font-size: ${({ theme }) => theme.Font.Sizes.Normal};
+`;
+
+export const SmallStyle = styled.p<HeadingProps>`
+  ${BaseText}
+
+  font-size: ${({ theme }) => theme.Font.Sizes.Small};
 `;
 
 export const Link = styled.a<HeadingProps>`
   ${BaseText}
 
-  color: var(--color-primary);
+  font-size: ${({ theme }) => theme.Font.Sizes.Normal};
+  color: ${({ theme }) => theme.Colors.Primary['500']};
   cursor: pointer;
-
-  font-family: var(--font-family-sans-serif);
-  font-size: calc(var(--font-size-base) * 0.8);
-  font-style: ${(props) => props.$italic && "italic"};
-  text-decoration: ${(props) => (props.$underline ? "underline" : "none")};
-  font-weight: ${(props) => {
-		switch (props.$type) {
-			case "light":
-				return "var(--font-weight-light)";
-			case "bold":
-				return "var(--font-weight-bold)";
-			case "bolder":
-				return "var(--font-weight-bolder)";
-			default:
-				return "var(--font-weight-normal)";
-		}
-	}};
 `;

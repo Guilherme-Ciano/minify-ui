@@ -1,0 +1,82 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as TypographyStories from './Typography.stories';
+
+<Meta of={TypographyStories} />
+
+# Typography Component Documentation
+
+The `Typography` component provides a set of typographic elements such as headings, paragraphs, and links with customizable styles including font weight, font style (italic), and text decoration (underline). These components offer flexibility in styling text content across the application.
+
+<Canvas of={TypographyStories.All} />
+
+## Use Cases
+
+### 1. Heading Elements
+
+Use the heading elements (`H1`, `H2`, `H3`) to display different levels of headings with various styles.
+
+<Canvas of={TypographyStories.Headings} />
+
+### 2. Paragraph Element
+
+Use the paragraph element (`P`) to display regular text content with customizable styles.
+
+<Canvas of={TypographyStories.Paragraph} />
+
+### 3. Link Element
+
+Use the link element (`A`) to display clickable links with customizable styles.
+
+<Canvas of={TypographyStories.Link} />
+
+### 3. Link Element
+
+Use the `small` element (`Small`) to display some quick informations with customizable styles.
+
+<Canvas of={TypographyStories.SmallText} />
+
+## Examples
+
+These examples demonstrate different use cases and configurations of the `Typography` components, providing a comprehensive set of typographic elements for text display and interaction within the application.
+
+```tsx
+import { H1, H2, H3, P, A, Small } from 'minify-ui';
+
+// Heading elements
+<H1 type="normal">Heading 1</H1>
+<H2 type="bold">Heading 2</H2>
+<H3 type="light">Heading 3</H3>
+
+// Paragraph element
+<P type="normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</P>
+
+// Link element
+<A href="#" type="bold">Click here</A>
+
+<Small>Small text</Small>
+```
+
+## Props
+
+The `Typography` components accept the following props:
+
+### Common Props
+
+- `type`: Specifies the text style variant. Options include `'light'`, `'lightBold'`, `'normal'`, `'bold'`, and `'bolder'`. Default is `'normal'`.
+- `italic`: Specifies whether the text should be italicized. Default is `false`.
+- `underline`: Specifies whether the text should be underlined. Default is `false`.
+
+### Heading Props
+
+- `children`: Text content to be displayed within the heading element.
+
+### Paragraph Props
+
+- `children`: Text content to be displayed within the paragraph element.
+
+### Link Props
+
+- `children`: Text content or JSX content to be displayed within the link element.
+- `href`: Specifies the URL of the link.
+- Other anchor HTML attributes like `target`, `rel`, etc.

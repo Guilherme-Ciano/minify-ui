@@ -1,0 +1,124 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal Component
+
+The `Modal` component provides a way to display a modal dialog in your React application. It allows you to customize the size, title, body content, and footer actions of the modal.
+
+## Installation
+
+To use the `Modal` component, you need to install it in your React project along with its dependencies:
+
+```bash
+npm install react-icons styled-components
+```
+
+## Usage
+
+1. **Import `Modal` Component**:
+
+Import the `Modal` component into your React component file:
+
+```javascript
+import React, { useState } from 'react';
+import { Modal } from 'minify-ui';
+```
+
+2. **Define State for Modal Visibility**:
+
+Define state to manage the visibility of the modal:
+
+```javascript
+const [isOpen, setIsOpen] = useState(false);
+```
+
+3. **Open Modal on Button Click**:
+
+Use the `Button` component (or any other trigger) to open the modal:
+
+```javascript
+<Button type="Primary" onClick={() => setIsOpen(true)}>
+  <span>Open modal</span>
+</Button>
+```
+
+4. **Create Modal Content**:
+
+Define the content of the modal inside the `Modal` component:
+
+```javascript
+<Modal
+  isOpen={isOpen}
+  onClose={() => setIsOpen(false)}
+  title={
+    <Column
+      style={{
+        gap: '0rem',
+      }}
+    >
+      <P type="lightBold">Create Account</P>
+      <Small>Join our dev community</Small>
+    </Column>
+  }
+  footer={
+    <Row
+      style={{
+        justifyContent: 'space-between',
+      }}
+    >
+      <Button type="Text" onClick={clearForm}>
+        <span>Clear</span>
+      </Button>
+
+      <Button
+        hover
+        type="Primary"
+        trailIcon={<IoMdSave />}
+        onClick={() => console.log(getAllValues())}
+      >
+        <span>Save</span>
+      </Button>
+    </Row>
+  }
+>
+  <Column>
+    <InputText
+      name="email"
+      value={getUniqueValue('email')}
+      placeholder="email@provider.com"
+      label="Email:"
+      onChange={handleChange}
+    />
+    <InputText
+      type="password"
+      name="password"
+      value={getUniqueValue('password')}
+      placeholder="super secure password goes here"
+      label="Password:"
+      onChange={handleChange}
+    />
+  </Column>
+</Modal>
+```
+
+5. **Handle Modal Close**:
+
+Close the modal by calling the `onClose` function when the close button is clicked or when an action is performed:
+
+```javascript
+onClose={() => setIsOpen(false)}
+```
+
+## Props
+
+### `Modal`
+
+- `isOpen`: Boolean indicating whether the modal is open or closed.
+- `size`: Number indicating the size of the modal.
+- `onClose`: Function to be called when the modal is closed.
+- `title`: ReactNode representing the title of the modal.
+- `footer`: ReactNode representing the footer content of the modal.
+- `children`: JSX Element or Elements representing the body content of the modal.
