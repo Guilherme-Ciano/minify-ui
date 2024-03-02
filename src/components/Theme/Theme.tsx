@@ -13,7 +13,12 @@ export function MinifyUIThemeProvider({
   children,
 }: MinifyUIThemeProviderProps) {
   return (
-    <StyledComponentsThemeProvider theme={theme}>
+    <StyledComponentsThemeProvider
+      theme={{
+        ...globalVariables,
+        ...theme,
+      }}
+    >
       {children}
     </StyledComponentsThemeProvider>
   );
