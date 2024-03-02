@@ -1,63 +1,63 @@
 interface FontSizesDefinition {
-  Heading1: string;
-  Heading2: string;
-  Heading3: string;
-  Normal: string;
-  Small: string;
+  Heading1?: string;
+  Heading2?: string;
+  Heading3?: string;
+  Normal?: string;
+  Small?: string;
 }
 
 interface WeightDefinition {
-  Light: number;
-  Normal: number;
-  LightBold: number;
-  Bold: number;
-  Bolder: number;
+  Light?: number;
+  Normal?: number;
+  LightBold?: number;
+  Bold?: number;
+  Bolder?: number;
 }
 
 interface ColorDefinition {
-  300: string;
-  400: string;
-  500: string;
-  600: string;
-  700: string;
+  300?: string;
+  400?: string;
+  500?: string;
+  600?: string;
+  700?: string;
 }
 
 interface ColorEventDefinition {
-  Success: string;
-  Warning: string;
-  Danger: {
-    500: string;
-    600: string;
-    700: string;
+  Success?: string;
+  Warning?: string;
+  Danger?: {
+    500?: string;
+    600?: string;
+    700?: string;
   };
 }
 
 interface SizeDefinition {
-  sxsm: string;
-  xsm: string;
-  sm: string;
-  md: string;
-  lg: string;
-  xl: string;
-  sxl: string;
+  sxsm?: string;
+  xsm?: string;
+  sm?: string;
+  md?: string;
+  lg?: string;
+  xl?: string;
+  sxl?: string;
 }
 
 interface FontVariables {
-  Family: string;
-  Sizes: FontSizesDefinition;
-  Weight: WeightDefinition;
+  Family?: string;
+  Sizes?: FontSizesDefinition;
+  Weight?: WeightDefinition;
 }
 
 interface ColorVariables {
-  Primary: ColorDefinition;
-  Secondary: ColorDefinition;
-  Events: ColorEventDefinition;
-  Neutral: ColorDefinition;
-  BW: ColorDefinition;
+  Primary?: ColorDefinition;
+  Secondary?: ColorDefinition;
+  Events?: ColorEventDefinition;
+  Neutral?: ColorDefinition;
+  BW?: ColorDefinition;
 }
 
 export interface GlobalVariablesProps {
-  Font: FontVariables;
-  Colors: ColorVariables;
-  Size: SizeDefinition;
+  Font?: FontVariables;
+  Colors?: ColorVariables;
+  Size?: SizeDefinition;
 }
