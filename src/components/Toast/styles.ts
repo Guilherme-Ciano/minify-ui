@@ -80,13 +80,13 @@ export const ToastWrapper = styled.div<ToastWrapperProps>`
 
 const types = {
   success: css`
-    ${({ theme }) => theme.Colors.Secondary['500']}
+    ${({ theme }) => theme.Colors.Events.Success['500']}
   `,
   error: css`
     ${({ theme }) => theme.Colors.Events.Danger['500']}
   `,
   warning: css`
-    ${({ theme }) => theme.Colors.Events.Warning}
+    ${({ theme }) => theme.Colors.Events.Warning['500']}
   `,
   info: css`
     ${({ theme }) => theme.Colors.Primary['400']}
