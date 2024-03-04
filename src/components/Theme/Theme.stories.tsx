@@ -4,6 +4,8 @@ import { MinifyUIThemeProvider } from './index';
 import { Button } from '..';
 import { globalVariables } from './variables';
 import React from 'react';
+import { AllVariants } from '../Toast/Exemples';
+import ToastProvider from '../Toast/Toast';
 
 const meta = {
   title: 'Components/Theme provider',
@@ -25,4 +27,19 @@ export const Default: Story = {
       </Button>
     ),
   },
+};
+
+export const ColorScheme: Story = {
+  args: {
+    colorScheme: {
+      Neutral: '#4E6766',
+      Primary: '#5AB1BB',
+    },
+    children: (
+      <ToastProvider>
+        <AllVariants />
+      </ToastProvider>
+    ),
+  },
+  render: (args) => <MinifyUIThemeProvider {...args}></MinifyUIThemeProvider>,
 };

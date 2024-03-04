@@ -14,7 +14,7 @@ interface WeightDefinition {
   Bolder?: number;
 }
 
-interface ColorDefinition {
+export interface ColorDefinition {
   300?: string;
   400?: string;
   500?: string;
@@ -23,13 +23,9 @@ interface ColorDefinition {
 }
 
 interface ColorEventDefinition {
-  Success?: string;
-  Warning?: string;
-  Danger?: {
-    500?: string;
-    600?: string;
-    700?: string;
-  };
+  Success: ColorDefinition;
+  Warning: ColorDefinition;
+  Danger: ColorDefinition;
 }
 
 interface SizeDefinition {

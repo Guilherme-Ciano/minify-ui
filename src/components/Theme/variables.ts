@@ -37,12 +37,26 @@ export const globalVariables: GlobalVariablesProps = {
     },
 
     Events: {
-      Success: '#76c893',
-      Warning: '#FFE45E',
+      Success: {
+        '300': '#8ef0b0',
+        '400': '#82dca2',
+        '500': '#76c893',
+        '600': '#6ab484',
+        '700': '#5ea076',
+      },
+      Warning: {
+        '300': '#ffff71',
+        '400': '#fffb67',
+        '500': '#FFE45E',
+        '600': '#e6cd55',
+        '700': '#ccb64b',
+      },
       Danger: {
+        '300': '#ff4347',
+        '400': '#fc3e41',
         '500': '#E5383B',
-        '600': '#CC5254',
-        '700': '#66292A',
+        '600': '#ce3235',
+        '700': '#b72d2f',
       },
     },
 
