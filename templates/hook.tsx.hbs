@@ -1,0 +1,14 @@
+import { useState } from 'react';
+
+export function use{{titleCase name}}(initialValues: any = {}) {
+    const [counter, setCounter] = useState(0);
+
+    function incrementCounter(valueOfIncrement: number = 0) {
+        setCounter(counter + valueOfIncrement);
+    }
+
+    return {
+        counter,
+        incrementCounter
+    }
+}
