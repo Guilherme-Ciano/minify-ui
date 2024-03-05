@@ -25,7 +25,8 @@
     "publish:test": "pnpm run build && npm version patch --no-git-tag-version && npm publish",
     "publish:release": "pnpm run build && npm version minor && npm publish",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate": "plop"
   },
   "engines": {
     "node": ">=10"
@@ -56,6 +57,7 @@
     "@types/lodash": "^4.14.202",
     "@types/react-syntax-highlighter": "^15.5.11",
     "css-loader": "^6.10.0",
+    "plop": "^4.0.1",
     "rollup": "^4.12.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",

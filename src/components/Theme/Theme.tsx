@@ -27,8 +27,6 @@ export function MinifyUIThemeProvider({
     Warning: colorScheme?.Warning,
   });
 
-  console.log('colors:', createColorScheme);
-
   return (
     <StyledComponentsThemeProvider
       theme={{

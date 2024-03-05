@@ -1,0 +1,26 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import React from 'react';
+import {{properCase name}} from './{{titleCase name}}';
+
+const meta = {
+  title: 'Components/{{properCase name}}',
+  component: {{properCase name}},
+  parameters: {
+    layout: 'centered',
+  },
+} satisfies Meta<typeof {{properCase name}}>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    props: "placeholder"
+  },
+  render: (args) => (
+    <MinifyUIThemeProvider>
+      < {{titleCase name}} {...args} />
+    </MinifyUIThemeProvider>
+  )
+};
