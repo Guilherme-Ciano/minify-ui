@@ -1,5 +1,5 @@
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
-import { GlobalVariablesProps } from './interfaces';
+import { EThemeMode, GlobalVariablesProps } from './interfaces';
 import React from 'react';
 import { globalVariables } from './variables';
 import {
@@ -9,16 +9,19 @@ import {
 
 export interface MinifyUIThemeProviderProps {
   theme?: GlobalVariablesProps;
+  themeMode?: EThemeMode;
   colorScheme?: generateColorSchemeProps;
   children: JSX.Element | JSX.Element[];
 }
 
 export function MinifyUIThemeProvider({
+  themeMode = EThemeMode.light,
   theme = globalVariables,
   colorScheme,
   children,
 }: MinifyUIThemeProviderProps) {
   const createColorScheme = generateColorScheme({
+    themeMode,
     Neutral: colorScheme?.Neutral,
     Primary: colorScheme?.Primary,
     Secondary: colorScheme?.Secondary,
