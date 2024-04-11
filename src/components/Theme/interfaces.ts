@@ -1,3 +1,8 @@
+export enum EThemeMode {
+  dark = 'dark',
+  light = 'light',
+}
+
 interface FontSizesDefinition {
   Heading1?: string;
   Heading2?: string;
@@ -15,11 +20,15 @@ interface WeightDefinition {
 }
 
 export interface ColorDefinition {
+  100?: string;
+  200?: string;
   300?: string;
   400?: string;
   500?: string;
   600?: string;
   700?: string;
+  800?: string;
+  900?: string;
 }
 
 interface ColorEventDefinition {
@@ -45,6 +54,7 @@ interface FontVariables {
 }
 
 interface ColorVariables {
+  TextColor?: string;
   Primary?: ColorDefinition;
   Secondary?: ColorDefinition;
   Events?: ColorEventDefinition;

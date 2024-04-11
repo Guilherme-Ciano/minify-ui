@@ -32,7 +32,7 @@ const BaseText = css<HeadingProps>`
   margin: 0;
   padding: 0;
 
-  color: ${({ theme }) => theme.Colors.BW['700']};
+  color: ${({ theme }) => theme.Colors.TextColor};
   font-family: ${({ theme }) => theme.Font.Family};
 
   ${({ $type }) => handleTextWeight($type)}

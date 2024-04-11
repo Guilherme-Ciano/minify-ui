@@ -6,6 +6,7 @@ import { globalVariables } from './variables';
 import React from 'react';
 import { AllVariants } from '../Toast/Exemples';
 import ToastProvider from '../Toast/Toast';
+import { EThemeMode } from './interfaces';
 
 const meta = {
   title: 'Components/Theme provider',
@@ -20,6 +21,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    themeMode: EThemeMode.light,
     theme: globalVariables,
     children: (
       <Button onClick={() => {}} type="Primary">
@@ -31,6 +33,7 @@ export const Default: Story = {
 
 export const ColorScheme: Story = {
   args: {
+    themeMode: EThemeMode.light,
     colorScheme: {
       Neutral: '#4E6766',
       Primary: '#5AB1BB',

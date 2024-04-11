@@ -76,7 +76,7 @@ export const MainWrapper = styled.div`
 export const InputWrapper = styled.div<InputProps>`
   display: flex;
   flex-direction: column;
-  border: 2px solid ${({ theme }) => theme.Colors.BW['400']};
+  border: 1px solid ${({ theme }) => theme.Colors.BW['300']};
   border-radius: ${({ theme }) => theme.Size.sxsm};
   transition: border-color 0.3s ease;
   margin-top: calc((${({ theme }) => theme.Size.sxsm}) - 5px);
@@ -127,7 +127,7 @@ export const Input = styled.input<InputProps>`
   font-family: ${({ theme }) => theme.Font.Family};
 
   &::placeholder {
-    color: ${({ theme }) => theme.Colors.BW['500']};
+    color: ${({ theme }) => theme.Colors.BW['400']};
   }
 
   &:focus {

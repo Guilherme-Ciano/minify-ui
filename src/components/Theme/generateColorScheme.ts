@@ -1,7 +1,9 @@
 import { MinifyUITheme, MinifyUIThemeProps } from '.';
 import { parseColor } from './hexParser';
+import { EThemeMode } from './interfaces';
 
 export interface generateColorSchemeProps {
+  themeMode?: EThemeMode;
   Primary?: string;
   Secondary?: string;
   Neutral?: string;
@@ -11,6 +13,7 @@ export interface generateColorSchemeProps {
 }
 
 export function generateColorScheme({
+  themeMode = EThemeMode.light,
   Primary = undefined,
   Secondary = undefined,
   Neutral = undefined,
@@ -18,6 +21,12 @@ export function generateColorScheme({
   Warning = undefined,
   Danger = undefined,
 }: generateColorSchemeProps): MinifyUIThemeProps {
+  function handleSetThemeMode() {
+    if (themeMode === EThemeMode.dark)
+      return MinifyUITheme?.Colors?.BW?.['300'];
+    return MinifyUITheme?.Colors?.BW?.['700'];
+  }
+
   const primaryColor = () => {
     if (!Primary) return MinifyUITheme.Colors?.Primary;
     return parseColor(Primary);
@@ -50,6 +59,7 @@ export function generateColorScheme({
 
   return {
     Colors: {
+      TextColor: handleSetThemeMode(),
       BW: { ...MinifyUITheme.Colors?.BW },
       Neutral: { ...neutralColor() },
       Primary: { ...primaryColor() },
