@@ -63,7 +63,7 @@ const BaseButton = css<ButtonProps>`
   border: none;
   border-radius: ${({ theme }) => theme.Size.sxsm};
 
-  color: ${({ theme }) => theme.Colors.BW['300']};
+  color: ${({ theme }) => theme.Colors.BW['100']};
 
   cursor: pointer;
   transition: all 0.5s ease;
@@ -86,7 +86,7 @@ const handleButtonDisabled = (disabled: boolean) => {
 
 const getHoverStyles = ({ variation }: ShadowVariations) => {
   const getProperColor = () => {
-    if (variation === 'Default') return 'Neutral';
+    if (variation === 'Default') return 'BW';
     return variation;
   };
 
@@ -118,6 +118,19 @@ const getHoverStyles = ({ variation }: ShadowVariations) => {
       `};
         `;
 
+      case 'Default':
+        return css<ButtonProps>`
+          background-color: ${({ theme }) => theme.Colors.BW['300']};
+
+          ${({ $shadow, theme }) =>
+            $shadow === true &&
+            `
+        box-shadow: -4px 4px 0px 1px ${theme.Colors.BW['700']};
+        -webkit-box-shadow: -4px 4px 0px 1px ${theme.Colors.BW['700']};
+        -moz-box-shadow: -4px 4px 0px 1px ${theme.Colors.BW['700']};
+      `};
+        `;
+
       default:
         return css<ButtonProps>`
           background-color: ${({ theme }) =>
@@ -143,7 +156,6 @@ const getHoverStyles = ({ variation }: ShadowVariations) => {
 
 const getBackgroundStyles = ({ variation }: HoverVariations) => {
   const getProperColor = () => {
-    if (variation === 'Default') return 'Neutral';
     return variation;
   };
 
@@ -171,10 +183,16 @@ const getBackgroundStyles = ({ variation }: HoverVariations) => {
           background-color: ${({ theme }) => theme.Colors.Primary['400']};
         `;
 
-      default:
+      case 'Default':
         return css<ButtonProps>`
-          background-color: ${({ theme }) =>
-            theme.Colors[getProperColor()]['500']};
+          background-color: ${({ theme }) => theme.Colors.BW['100']};
+          border: 1px solid ${({ theme }) => theme.Colors.BW['400']};
+          color: ${({ theme }) => theme.Colors.BW['700']};
+        `;
+
+      case 'Secondary':
+        return css<ButtonProps>`
+          background-color: ${({ theme }) => theme.Colors.Secondary['400']};
         `;
     }
   };

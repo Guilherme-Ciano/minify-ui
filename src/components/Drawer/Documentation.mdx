@@ -1,0 +1,88 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as DrawerStories from './Drawer.stories';
+
+<Meta of={DrawerStories} />
+
+# Drawer Component Documentation
+
+The `Drawer` component provides a flexible and responsive user interface for displaying additional content in a drawer layout. It consists of three main parts: header, content, and optionally, footer.
+
+## Usage
+
+This Drawer component was built using the React composition pattern, offering a modular and flexible solution for displaying additional content in a drawer layout. With its composition-based approach, it facilitates customization and reuse in different React application contexts.
+
+- `Drawer.Container`: This is the main container that encapsulates the drawer content. It has properties like size to specify the drawer's size, isOpen to control its visibility, and onClose to handle close events.
+- `Drawer.Header`: Responsible for displaying the drawer header, including a close button to allow users to close the drawer when needed. The text displayed in the header is defined by the title prop.
+- `Drawer.Content`: This is the component where the main drawer content is rendered. The content is flexible and can include any child elements you desire.
+- `Drawer.Footer` (optional): If needed, this component renders a footer below the drawer content. It is useful for adding actions or additional information related to the main drawer content. The footer content is defined by the footer prop.
+
+## Use Cases
+
+1. Secondary Navigation: Use the `Drawer` to display secondary navigation options, such as settings or filters menus, while keeping the main page content visible.
+2. Displaying Additional Information: Use the `Drawer` to show additional information, such as product details in an online store, without taking up precious space on the main page.
+3. Forms or Editing Modals: Implement the `Drawer` to edit information or fill out forms in a non-intrusive way, maintaining the context of the page intact.
+4. Notifications and Messages: Utilize the `Drawer` to display important notifications or messages, allowing users to view and interact with them without interrupting their activities.
+
+## Examples
+
+<Canvas of={DrawerStories.Default} />
+
+```jsx
+import React, { useState } from 'react';
+import { Drawer } from '@e-auditoria/util-ui';
+
+const ExampleComponent = () => {
+  const [showDrawer, setShowDrawer] = useState(false);
+
+  const openDrawer = () => {
+    setShowDrawer(true);
+  };
+
+  const closeDrawer = () => {
+    setShowDrawer(false);
+  };
+
+  return (
+    <>
+      <button onClick={openDrawer}>Show Drawer</button>
+      <Drawer.Container size="medium" isOpen={showDrawer} onClose={closeDrawer}>
+        <Drawer.Header onClose={closeDrawer}>Drawer Title</Drawer.Header>
+        <Drawer.Content>
+          <p>Here is the drawer content.</p>
+        </Drawer.Content>
+        <Drawer.Footer>Drawer Footer</Drawer.Footer>
+      </Drawer.Container>
+    </>
+  );
+};
+
+export default ExampleComponent;
+```
+
+This example demonstrates how to use the `Drawer` component in a React application. The "Show Drawer" button opens the drawer, displaying a title, content, and footer inside it. The `showDrawer` state controls the visibility of the drawer, while the `openDrawer` and `closeDrawer` functions are responsible for opening and closing the drawer, respectively.
+
+## Props
+
+### `Drawer.Container`
+
+The `Drawer.Container` accepts the following properties:
+
+- `isOpen`: <b>boolean</b> = This property defines whether the Drawer will be open or closed
+- `size`: <b>'small' | 'medium' | 'large' (default: `medium`)</b> = Optional. This property sets the size of the Drawer
+- `onClose`: <b>(event: any) => void</b> = This function will be executed every time the user closes the Drawer
+- `isOpen`: <b>boolean</b> = This property defines whether the Drawer will be open or closed
+- `children` : <b> ReactNode </b> = It is the content that will be rendered inside the `Drawer.Container`
+
+### `Drawer.Header`
+
+The `Drawer.Header` accepts the following properties:
+
+- `onClose`: <b>(event: any) => void</b> = This function will be executed every time the user closes the Drawer
+- `children` : <b> ReactNode | string </b> = It is the content that will be rendered inside the `Drawer.Header`
+
+### `Drawer.Content` and `Drawer.Footer`
+
+The `Drawer.Content` and `Drawer.Footer` accept only one property:
+
+- `children` : <b> ReactNode </b> = It is the content that will be rendered inside the `Drawer.Content` or `Drawer.Footer`

@@ -57,11 +57,11 @@ export const ToastWrapper = styled.div<ToastWrapperProps>`
 
   & p {
     color: ${({ theme, type }) =>
-      type !== 'default' ? theme.Colors.BW['300'] : theme.Colors.BW['700']};
+      type !== 'default' ? theme.Colors.BW['100'] : theme.Colors.BW['900']};
     font-weight: ${({ theme }) => theme.Font.Weight.normal};
   }
 
-  border: 1px solid ${({ theme }) => theme.Colors.BW['400']};
+  border: 1px solid ${({ theme }) => theme.Colors.BW['200']};
   box-shadow: -4px 6px 5px 2px rgba(0, 0, 0, 0.02);
   -webkit-box-shadow: -4px 6px 5px 2px rgba(0, 0, 0, 0.02);
   -moz-box-shadow: -4px 6px 5px 2px rgba(0, 0, 0, 0.02);
@@ -74,7 +74,7 @@ export const ToastWrapper = styled.div<ToastWrapperProps>`
 
   & svg {
     font-size: ${({ theme }) => theme.Font.Sizes.Heading3};
-    fill: ${({ theme }) => theme.Colors.BW['300']};
+    fill: ${({ theme }) => theme.Colors.BW['100']};
   }
 `;
 
@@ -95,7 +95,7 @@ const types = {
     ${({ theme }) => theme.Colors.BW['700']}
   `,
   default: css`
-    ${({ theme }) => theme.Colors.BW['300']}
+    ${({ theme }) => theme.Colors.BW['100']}
   `,
 };
 

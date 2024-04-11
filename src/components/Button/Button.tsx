@@ -1,5 +1,5 @@
 import { isUndefined } from 'lodash';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { MinimalButton } from './styles';
 
 interface ButtonProps {
@@ -10,7 +10,7 @@ interface ButtonProps {
   disabled?: boolean;
 
   onClick: () => void;
-  children: JSX.Element;
+  children: ReactNode | JSX.Element;
 
   id?: string;
   icon?: JSX.Element;

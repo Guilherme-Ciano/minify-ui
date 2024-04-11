@@ -8,7 +8,6 @@ const Maximize = keyframes`
   to {
     opacity: 1;
     transform: scale(1);
-    transform: translate(-50%, -50%)
   }
 `;
 
@@ -25,9 +24,10 @@ export const ModalOverlay = styled.div<{ isOpen: boolean }>`
 
 export const ModalContainer = styled.div<{ size: number }>`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  top: 30%;
+  left: 30%;
+
   background-color: #fff;
   padding: calc((${({ theme }) => theme.Size.sm}) + 0.3rem);
   border-radius: ${({ theme }) => theme.Size.sxsm};
